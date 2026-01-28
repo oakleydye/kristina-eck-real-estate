@@ -47,24 +47,28 @@ export default function ContactPage() {
         </div>
       </section>
 
+      {/* Let's Talk Section */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center space-y-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground">
+              Let's Talk
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Whether you're buying, selling, or just have questions, we're here to help.
+              Reach out through any of the channels below or fill out the contact form.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Contact Content */}
-      <section className="py-20 bg-background">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
             {/* Contact Information */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
-                  Let's Talk
-                </h2>
-                <p className="text-lg text-muted-foreground mb-8">
-                  Whether you're buying, selling, or just have questions, we're here to help.
-                  Reach out through any of the channels below or fill out the contact form.
-                </p>
-              </div>
-
-              <div className="space-y-6">
-                <Card className="border-border/50">
+            <div className="space-y-6">
+              <Card className="border-border/50">
                   <CardHeader>
                     <div className="flex items-start gap-4">
                       <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -143,7 +147,6 @@ export default function ContactPage() {
                     </div>
                   </CardHeader>
                 </Card>
-              </div>
             </div>
 
             {/* Contact Form */}
@@ -237,10 +240,10 @@ export default function ContactPage() {
             </div>
             <div className="relative rounded-lg h-96 overflow-hidden shadow-xl">
               <Image
-                src="/images/_MG_4395EditF.webp"
+                src="/images/kristina-eck-team-logo.svg"
                 alt="Our office location"
                 fill
-                className="object-cover"
+                className="object-cover rounded-lg"
                 sizes="(max-width: 1200px) 100vw, 1200px"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />

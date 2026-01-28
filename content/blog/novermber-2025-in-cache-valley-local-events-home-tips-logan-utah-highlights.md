@@ -1,7 +1,7 @@
 ---
 title: "November 2025 in Cache Valley: Local Events, Home Tips & Logan Utah Highlights"
 date: "2025-11-06"
-excerpt:
+excerpt: "November in Cache Valley has arrived bringing crisp mornings, golden leaves, and that awkward “do I need a jacket or not?” kind of weather. It’s also full of reasons to celebrate our amazing community! If you’re looking for fun things to do around Cache Valley this month, we’ve rounded up local events, homeowner tips, dining favorites, and (of course) a quick real estate market update."
 author: Daina Rudd
 category: "Local Updates"
 image: "/images/blog/2025november.webp"

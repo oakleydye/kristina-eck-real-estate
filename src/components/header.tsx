@@ -55,6 +55,13 @@ export function Header() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
+                <Link href="/faq" passHref>
+                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                    FAQ
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
                 <Link href="/blog" passHref>
                   <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
                     Blog
@@ -131,6 +138,13 @@ export function Header() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 About Us
+              </Link>
+              <Link
+                href="/faq"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                FAQ
               </Link>
               <Link
                 href="/contact"

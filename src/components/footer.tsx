@@ -1,6 +1,6 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Mail, Phone, MapPin, Instagram } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
 export function Footer() {
   return (
@@ -11,7 +11,7 @@ export function Footer() {
           <div className="space-y-4">
             <Link href="/" className="block">
               <Image
-                src="/images/footer_logo.svg"
+                src="/images/kristina-eck-team-logo.svg"
                 alt="Kristina Eck Real Estate Team"
                 width={300}
                 height={150}
@@ -19,7 +19,8 @@ export function Footer() {
               />
             </Link>
             <p className="text-sm text-muted-foreground">
-              Your trusted partner in finding the perfect home. Serving the community with dedication and expertise.
+              Your trusted partner in finding the perfect home. Serving the
+              community with dedication and expertise.
             </p>
           </div>
 
@@ -28,22 +29,50 @@ export function Footer() {
             <h3 className="font-semibold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link href="/properties" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/properties"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Properties
                 </Link>
               </li>
               <li>
-                <Link href="/about" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/about"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link href="/contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                <Link
+                  href="/blog"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  Blog
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/faq"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
                   Contact
                 </Link>
               </li>
@@ -54,10 +83,16 @@ export function Footer() {
           <div>
             <h3 className="font-semibold text-foreground mb-4">Services</h3>
             <ul className="space-y-2">
-              <li className="text-sm text-muted-foreground">Buyer Representation</li>
-              <li className="text-sm text-muted-foreground">Seller Representation</li>
+              <li className="text-sm text-muted-foreground">
+                Buyer Representation
+              </li>
+              <li className="text-sm text-muted-foreground">
+                Seller Representation
+              </li>
               <li className="text-sm text-muted-foreground">Market Analysis</li>
-              <li className="text-sm text-muted-foreground">Property Valuation</li>
+              <li className="text-sm text-muted-foreground">
+                Property Valuation
+              </li>
             </ul>
           </div>
 
@@ -67,19 +102,29 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
-                <a href="tel:+14357577259" className="hover:text-foreground transition-colors">
+                <a
+                  href="tel:+14357577259"
+                  className="hover:text-foreground transition-colors"
+                >
                   (435) 757-7259
                 </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <a href="mailto:kristina@kwlogan.com" className="hover:text-foreground transition-colors">
+                <a
+                  href="mailto:kristina@kwlogan.com"
+                  className="hover:text-foreground transition-colors"
+                >
                   kristina@kwlogan.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span>33 North Main<br />Logan, UT 84321</span>
+                <span>
+                  33 North Main
+                  <br />
+                  Logan, UT 84321
+                </span>
               </li>
             </ul>
           </div>
@@ -100,15 +145,16 @@ export function Footer() {
             </div>
             <div className="text-center space-y-1">
               <p className="text-sm text-muted-foreground">
-                &copy; {new Date().getFullYear()} Kristina Eck Real Estate Team. All rights reserved.
+                &copy; {new Date().getFullYear()} Kristina Eck Real Estate Team.
+                All rights reserved.
               </p>
               <p className="text-xs text-muted-foreground">
-                License #LICENSE_NUMBER_PLACEHOLDER
+                License #5504469-PB00
               </p>
             </div>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }

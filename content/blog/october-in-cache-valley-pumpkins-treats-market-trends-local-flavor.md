@@ -1,7 +1,7 @@
 ---
 title: "October in Cache Valley: Pumpkins, Treats, Market Trends & Local Flavor"
 date: "2025-10-06"
-excerpt:
+excerpt: "It’s officially pumpkin spice season in Cache Valley! The leaves are crunching, the nights are chilly, and everywhere you look, pumpkins are multiplying faster than candy corn in a trick-or-treat bucket. October is one of the best months here, not just for the fall colors, but for the community traditions (and food!) that make this valley feel like home."
 author: Bryson Lundell
 category: "Local Updates"
 image: "/images/blog/2025october.webp"

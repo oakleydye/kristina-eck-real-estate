@@ -20,7 +20,7 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative py-20 md:py-32 overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
@@ -34,7 +34,7 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30" />
         </div>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center min-h-screen">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <Badge variant="secondary" className="text-sm px-4 py-1 bg-background/80 backdrop-blur-sm">
               Your Trusted Real Estate Partner
