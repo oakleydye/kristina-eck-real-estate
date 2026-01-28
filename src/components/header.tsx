@@ -18,14 +18,23 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          <Link href="/" className="flex items-center gap-2">
+        <div className="flex h-20 items-center justify-between">
+          <Link href="/" className="flex items-center gap-3">
             <Image
               src="/images/kristina-eck-team-logo.svg"
               alt="Kristina Eck Real Estate Team"
-              width={200}
-              height={48}
-              className="h-12 w-auto"
+              width={240}
+              height={60}
+              className="h-14 w-auto"
+              priority
+            />
+            <div className="h-12 w-px bg-primary/60" />
+            <Image
+              src="/images/kw-logo.png"
+              alt="Keller Williams"
+              width={100}
+              height={60}
+              className="h-10 w-auto opacity-80"
               priority
             />
           </Link>

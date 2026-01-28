@@ -9,13 +9,21 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <Link href="/" className="block">
+            <Link href="/" className="flex items-center gap-4">
               <Image
                 src="/images/kristina-eck-team-logo.svg"
                 alt="Kristina Eck Real Estate Team"
                 width={300}
                 height={150}
-                className="h-14 w-auto"
+                className="h-20 w-auto"
+              />
+              <div className="h-16 w-px bg-primary/60" />
+              <Image
+                src="/images/kw-logo.png"
+                alt="Keller Williams"
+                width={100}
+                height={60}
+                className="h-12 w-auto opacity-80"
               />
             </Link>
             <p className="text-sm text-muted-foreground">
