@@ -73,7 +73,9 @@ export default function ContactPage() {
                       <div>
                         <CardTitle className="text-lg mb-2">Phone</CardTitle>
                         <CardDescription className="text-base">
-                          (555) 123-4567
+                          <a href="tel:+14357577259" className="hover:text-foreground transition-colors">
+                            (435) 757-7259
+                          </a>
                         </CardDescription>
                         <CardDescription className="text-sm mt-1">
                           Monday - Friday, 9:00 AM - 6:00 PM
@@ -92,7 +94,9 @@ export default function ContactPage() {
                       <div>
                         <CardTitle className="text-lg mb-2">Email</CardTitle>
                         <CardDescription className="text-base">
-                          info@kristinaeck.com
+                          <a href="mailto:kristina@kwlogan.com" className="hover:text-foreground transition-colors">
+                            kristina@kwlogan.com
+                          </a>
                         </CardDescription>
                         <CardDescription className="text-sm mt-1">
                           We'll respond within 24 hours
@@ -111,8 +115,8 @@ export default function ContactPage() {
                       <div>
                         <CardTitle className="text-lg mb-2">Office</CardTitle>
                         <CardDescription className="text-base">
-                          123 Main Street<br />
-                          Your City, State 12345
+                          33 North Main<br />
+                          Logan, UT 84321
                         </CardDescription>
                         <CardDescription className="text-sm mt-1">
                           Visit us by appointment
@@ -245,7 +249,7 @@ export default function ContactPage() {
                   <MapPin className="h-6 w-6" />
                   <h3 className="text-2xl font-bold">Visit Us</h3>
                 </div>
-                <p className="text-white/90">123 Main Street, Your City, State 12345</p>
+                <p className="text-white/90">33 North Main, Logan, UT 84321</p>
               </div>
             </div>
           </div>

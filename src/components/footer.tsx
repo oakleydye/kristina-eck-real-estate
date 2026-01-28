@@ -1,5 +1,6 @@
 import Link from "next/link"
-import { Home, Mail, Phone, MapPin } from "lucide-react"
+import Image from "next/image"
+import { Mail, Phone, MapPin, Instagram } from "lucide-react"
 
 export function Footer() {
   return (
@@ -8,12 +9,15 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <Home className="h-6 w-6 text-primary" />
-              <span className="text-lg font-bold text-foreground">
-                Kristina Eck Real Estate Team
-              </span>
-            </div>
+            <Link href="/" className="block">
+              <Image
+                src="/images/footer_logo.svg"
+                alt="Kristina Eck Real Estate Team"
+                width={300}
+                height={150}
+                className="h-14 w-auto"
+              />
+            </Link>
             <p className="text-sm text-muted-foreground">
               Your trusted partner in finding the perfect home. Serving the community with dedication and expertise.
             </p>
@@ -63,24 +67,46 @@ export function Footer() {
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Phone className="h-4 w-4 text-primary" />
-                <span>(555) 123-4567</span>
+                <a href="tel:+14357577259" className="hover:text-foreground transition-colors">
+                  (435) 757-7259
+                </a>
               </li>
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
-                <span>info@kristinaeck.com</span>
+                <a href="mailto:kristina@kwlogan.com" className="hover:text-foreground transition-colors">
+                  kristina@kwlogan.com
+                </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPin className="h-4 w-4 text-primary mt-0.5" />
-                <span>123 Main Street<br />Your City, State 12345</span>
+                <span>33 North Main<br />Logan, UT 84321</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-8 pt-8 border-t border-border/40">
-          <p className="text-center text-sm text-muted-foreground">
-            &copy; {new Date().getFullYear()} Kristina Eck Real Estate Team. All rights reserved.
-          </p>
+          <div className="flex flex-col items-center gap-4">
+            <div className="flex items-center gap-4">
+              <a
+                href="https://www.instagram.com/kristinaeckteam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Instagram"
+              >
+                <Instagram className="h-5 w-5" />
+              </a>
+            </div>
+            <div className="text-center space-y-1">
+              <p className="text-sm text-muted-foreground">
+                &copy; {new Date().getFullYear()} Kristina Eck Real Estate Team. All rights reserved.
+              </p>
+              <p className="text-xs text-muted-foreground">
+                License #LICENSE_NUMBER_PLACEHOLDER
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

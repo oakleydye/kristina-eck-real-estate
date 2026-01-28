@@ -11,22 +11,23 @@ export const siteConfig = {
   url: 'https://kristinaeck.com', // Update with your actual domain
   ogImage: '/images/_MG_4454Edit.webp',
   links: {
-    twitter: 'https://twitter.com/kristinaeck', // Update with actual social links
-    facebook: 'https://facebook.com/kristinaeck',
-    instagram: 'https://instagram.com/kristinaeck',
-    linkedin: 'https://linkedin.com/company/kristinaeck',
+    instagram: 'https://www.instagram.com/kristinaeckteam/',
+    facebook: '', // Add if available
+    twitter: '', // Add if available
+    linkedin: '', // Add if available
   },
   contact: {
-    phone: '(555) 123-4567',
-    email: 'info@kristinaeck.com',
+    phone: '(435) 757-7259',
+    email: 'kristina@kwlogan.com',
     address: {
-      street: '123 Main Street',
-      city: 'Your City',
-      state: 'State',
-      zip: '12345',
+      street: '33 North Main',
+      city: 'Logan',
+      state: 'UT',
+      zip: '84321',
       country: 'United States',
     },
   },
+  license: 'LICENSE_NUMBER_PLACEHOLDER', // Replace with actual license number
   business: {
     name: 'Kristina Eck Real Estate Team',
     legalName: 'Kristina Eck Real Estate Team, LLC',
@@ -88,7 +89,6 @@ export const defaultMetadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
-    creator: '@kristinaeck', // Update with actual handle
   },
   robots: {
     index: true,
@@ -117,11 +117,13 @@ export function generateLocalBusinessSchema() {
     name: siteConfig.business.name,
     legalName: siteConfig.business.legalName,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/kristina-eck-team-logo.svg`,
     foundingDate: siteConfig.business.foundingDate,
     priceRange: siteConfig.business.priceRange,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
+    // @ts-ignore - license is a valid property
+    license: siteConfig.license,
     address: {
       '@type': 'PostalAddress',
       streetAddress: siteConfig.contact.address.street,
@@ -140,11 +142,8 @@ export function generateLocalBusinessSchema() {
       name: siteConfig.contact.address.city,
     },
     sameAs: [
-      siteConfig.links.facebook,
-      siteConfig.links.twitter,
       siteConfig.links.instagram,
-      siteConfig.links.linkedin,
-    ],
+    ].filter(Boolean),
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -169,7 +168,7 @@ export function generateOrganizationSchema() {
     '@type': 'Organization',
     name: siteConfig.business.name,
     url: siteConfig.url,
-    logo: `${siteConfig.url}/logo.png`,
+    logo: `${siteConfig.url}/images/kristina-eck-team-logo.svg`,
     description: siteConfig.description,
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
@@ -182,11 +181,8 @@ export function generateOrganizationSchema() {
       addressCountry: siteConfig.contact.address.country,
     },
     sameAs: [
-      siteConfig.links.facebook,
-      siteConfig.links.twitter,
       siteConfig.links.instagram,
-      siteConfig.links.linkedin,
-    ],
+    ].filter(Boolean),
   };
 }
 

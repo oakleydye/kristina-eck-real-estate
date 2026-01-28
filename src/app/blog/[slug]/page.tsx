@@ -8,12 +8,13 @@ import { Card } from "@/components/ui/card";
 import { getPostBySlug, getAllPostSlugs, formatDate, getRecentPosts } from "@/lib/blog";
 import { Metadata } from "next";
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { generateBreadcrumbSchema } from "@/lib/seo";
 
 interface BlogPostPageProps {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 }
 
 // Generate static params for all blog posts
@@ -24,7 +25,8 @@ export async function generateStaticParams() {
 
 // Generate metadata for each post
 export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  const post = getPostBySlug(params.slug);
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     return {
@@ -53,8 +55,9 @@ export async function generateMetadata({ params }: BlogPostPageProps): Promise<M
   };
 }
 
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = getPostBySlug(params.slug);
+export default async function BlogPostPage({ params }: BlogPostPageProps) {
+  const { slug } = await params;
+  const post = getPostBySlug(slug);
 
   if (!post) {
     notFound();
@@ -148,7 +151,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               src={post.image}
               alt={post.title}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
               sizes="100vw"
             />
@@ -162,19 +165,57 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
               {/* Main Content */}
               <article className="lg:col-span-8">
                 <div className="prose prose-lg max-w-none
-                  prose-headings:font-bold prose-headings:text-foreground
+                  prose-headings:font-bold prose-headings:text-foreground prose-headings:mt-8 prose-headings:mb-4
                   prose-h1:text-4xl prose-h2:text-3xl prose-h3:text-2xl
-                  prose-p:text-muted-foreground prose-p:leading-relaxed
+                  prose-p:text-muted-foreground prose-p:leading-relaxed prose-p:mb-4
                   prose-a:text-primary prose-a:no-underline hover:prose-a:underline
                   prose-strong:text-foreground
-                  prose-ul:text-muted-foreground prose-ol:text-muted-foreground
-                  prose-li:marker:text-primary
+                  prose-ul:text-muted-foreground prose-ul:my-4 prose-ol:text-muted-foreground prose-ol:my-4
+                  prose-li:marker:text-primary prose-li:my-2
                   prose-blockquote:border-l-primary prose-blockquote:text-muted-foreground
                   prose-code:text-primary prose-code:bg-muted prose-code:px-1 prose-code:rounded
                   prose-pre:bg-muted prose-pre:border prose-pre:border-border
                   prose-img:rounded-lg prose-img:shadow-lg"
                 >
-                  <ReactMarkdown>{post.content}</ReactMarkdown>
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
+                    components={{
+                      h1: ({node, ...props}) => <h1 className="text-4xl font-bold mt-8 mb-4 text-foreground" {...props} />,
+                      h2: ({node, ...props}) => <h2 className="text-3xl font-bold mt-8 mb-4 text-foreground" {...props} />,
+                      h3: ({node, ...props}) => <h3 className="text-2xl font-bold mt-6 mb-3 text-foreground" {...props} />,
+                      h4: ({node, ...props}) => <h4 className="text-xl font-bold mt-4 mb-2 text-foreground" {...props} />,
+                      p: ({node, ...props}) => <p className="text-muted-foreground leading-relaxed mb-4" {...props} />,
+                      ul: ({node, ...props}) => <ul className="list-disc pl-6 my-4 space-y-2 text-muted-foreground" {...props} />,
+                      ol: ({node, ...props}) => <ol className="list-decimal pl-6 my-4 space-y-2 text-muted-foreground" {...props} />,
+                      li: ({node, ...props}) => <li className="text-muted-foreground" {...props} />,
+                      a: ({node, ...props}) => <a className="text-primary hover:underline" {...props} />,
+                      strong: ({node, ...props}) => <strong className="font-bold text-foreground" {...props} />,
+                      em: ({node, ...props}) => <em className="italic" {...props} />,
+                      blockquote: ({node, ...props}) => <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground my-4" {...props} />,
+                      img: ({node, src, alt, ...props}) => {
+                        if (!src || typeof src !== 'string') return null;
+                        return (
+                          <span className="block my-8">
+                            <Image
+                              src={src}
+                              alt={alt || ''}
+                              width={800}
+                              height={600}
+                              className="rounded-lg shadow-lg w-full h-auto"
+                              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 800px"
+                            />
+                            {alt && (
+                              <span className="block text-center text-sm text-muted-foreground mt-2 italic">
+                                {alt}
+                              </span>
+                            )}
+                          </span>
+                        );
+                      },
+                    }}
+                  >
+                    {post.content}
+                  </ReactMarkdown>
                 </div>
 
                 {/* Tags */}
