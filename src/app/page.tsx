@@ -20,45 +20,69 @@ export default function HomePage() {
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative min-h-screen overflow-hidden">
-        {/* Background Image */}
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/images/_MG_4454Edit.webp"
-            alt="Beautiful home exterior"
-            fill
-            className="object-cover brightness-[0.85]"
-            priority
-            quality={90}
-          />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-secondary/20 to-accent/30" />
-        </div>
+      <section className="relative min-h-screen overflow-hidden bg-gradient-to-br from-background via-secondary/5 to-accent/10">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 min-h-screen items-center py-20">
+            {/* Left Column - Content */}
+            <div className="space-y-8 lg:pr-8">
+              <Badge variant="secondary" className="text-sm px-4 py-1">
+                Your Trusted Real Estate Partner
+              </Badge>
 
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex items-center min-h-screen">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <Badge variant="secondary" className="text-sm px-4 py-1 bg-background/80 backdrop-blur-sm">
-              Your Trusted Real Estate Partner
-            </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white drop-shadow-lg">
-              Find Your Dream Home with
-              <span className="text-primary block mt-2">Kristina Eck Real Estate Team</span>
-            </h1>
-            <p className="text-lg md:text-xl text-white/95 max-w-2xl mx-auto drop-shadow-md">
-              We specialize in helping families find their perfect home. With years of experience and deep local knowledge,
-              we make your real estate journey seamless and rewarding.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button size="lg" asChild className="text-base shadow-lg">
-                <Link href="/properties">
-                  <Search className="mr-2 h-5 w-5" />
-                  Browse Properties
-                </Link>
-              </Button>
-              <Button size="lg" variant="outline" asChild className="text-base bg-white/90 backdrop-blur-sm hover:bg-white shadow-lg">
-                <Link href="/contact">
-                  Schedule a Consultation
-                </Link>
-              </Button>
+              <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
+                Find Your Dream Home with
+                <span className="text-primary block mt-2">Kristina Eck Real Estate Team</span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-muted-foreground">
+                We specialize in helping families find their perfect home. With over 20 years of experience and deep local knowledge of Cache Valley,
+                we make your real estate journey seamless and rewarding.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4">
+                <Button size="lg" asChild className="text-base">
+                  <Link href="/properties">
+                    <Search className="mr-2 h-5 w-5" />
+                    Browse Properties
+                  </Link>
+                </Button>
+                <Button size="lg" variant="outline" asChild className="text-base">
+                  <Link href="/contact">
+                    Schedule a Consultation
+                  </Link>
+                </Button>
+              </div>
+
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border/50">
+                <div>
+                  <div className="text-3xl font-bold text-primary">20+</div>
+                  <div className="text-sm text-muted-foreground">Years Experience</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">500+</div>
+                  <div className="text-sm text-muted-foreground">Homes Sold</div>
+                </div>
+                <div>
+                  <div className="text-3xl font-bold text-primary">98%</div>
+                  <div className="text-sm text-muted-foreground">Client Satisfaction</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right Column - Image */}
+            <div className="relative h-[500px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image
+                src="/images/_MG_4454Edit.webp"
+                alt="Happy family with their real estate agent"
+                fill
+                className="object-cover"
+                priority
+                quality={90}
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+              {/* Subtle overlay only at bottom for any text if needed */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
             </div>
           </div>
         </div>
