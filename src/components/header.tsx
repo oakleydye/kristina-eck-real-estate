@@ -30,7 +30,7 @@ export function Header() {
             />
             <div className="h-12 w-px bg-primary/60" />
             <Image
-              src="/images/kw-logo.png"
+              src="/images/kw-logo.webp"
               alt="Keller Williams"
               width={100}
               height={60}
