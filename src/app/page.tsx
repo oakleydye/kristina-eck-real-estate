@@ -3,8 +3,10 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Home, Search, TrendingUp, Users, Award, Heart, Building2, MapPin, DollarSign, Bed, Bath, Square } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Home, Search, TrendingUp, Users, Award, Heart, Building2, MapPin, DollarSign, Bed, Bath, Square, Star, Quote } from "lucide-react";
 import { Metadata } from "next";
+import { getFeaturedReviews } from "@/lib/reviews";
 
 export const metadata: Metadata = {
   title: "Find Your Dream Home | Kristina Eck Real Estate Team",
@@ -17,6 +19,8 @@ export const metadata: Metadata = {
 };
 
 export default function HomePage() {
+  const featuredReviews = getFeaturedReviews(5);
+
   return (
     <div className="flex flex-col">
       {/* Hero Section */}
@@ -172,6 +176,104 @@ export default function HomePage() {
                 </CardDescription>
               </CardHeader>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Reviews Carousel */}
+      <section className="py-20 bg-gradient-to-br from-secondary/5 via-accent/5 to-primary/5">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <Badge variant="secondary" className="text-sm px-4 py-1 mb-4">
+              Client Reviews
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-lg text-muted-foreground">
+              Real experiences from families who trusted us with their home journey.
+            </p>
+          </div>
+
+          <div className="max-w-5xl mx-auto">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent>
+                {featuredReviews.map((review) => (
+                  <CarouselItem key={review.id} className="md:basis-1/2 lg:basis-1/2">
+                    <div className="p-2">
+                      <Card className="h-full border-border/50 hover:shadow-lg transition-shadow">
+                        <CardContent className="p-8 flex flex-col h-full">
+                          {/* Quote Icon */}
+                          <Quote className="h-10 w-10 text-primary/20 mb-4" />
+
+                          {/* Review Text */}
+                          <div className="text-muted-foreground leading-relaxed flex-grow mb-6 space-y-3">
+                            {review.review.split('\n').map((paragraph, idx) => (
+                              <p key={idx}>
+                                {idx === 0 && '"'}
+                                {paragraph}
+                                {idx === review.review.split('\n').length - 1 && '"'}
+                              </p>
+                            ))}
+                          </div>
+
+                          {/* Rating */}
+                          {review.rating && (
+                            <div className="flex gap-1 mb-4">
+                              {[1, 2, 3, 4, 5].map((star) => (
+                                <Star
+                                  key={star}
+                                  className={`h-5 w-5 ${
+                                    star <= review.rating!
+                                      ? "fill-primary text-primary"
+                                      : "text-border"
+                                  }`}
+                                />
+                              ))}
+                            </div>
+                          )}
+
+                          {/* Author Info */}
+                          <div className="flex items-center gap-4 pt-4 border-t border-border/50">
+                            <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                              <span className="text-xl font-bold text-primary">
+                                {review.name.charAt(0)}
+                              </span>
+                            </div>
+                            <div className="flex-1">
+                              <div className="font-semibold text-foreground">{review.name}</div>
+                              {review.location && (
+                                <div className="text-sm text-muted-foreground flex items-center gap-1">
+                                  <MapPin className="h-3 w-3" />
+                                  {review.location}
+                                </div>
+                              )}
+                            </div>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden md:flex" />
+              <CarouselNext className="hidden md:flex" />
+            </Carousel>
+          </div>
+
+          {/* Link to All Reviews */}
+          <div className="text-center mt-12">
+            <Button variant="outline" size="lg" asChild>
+              <Link href="/reviews">
+                View All Reviews
+              </Link>
+            </Button>
           </div>
         </div>
       </section>
