@@ -9,11 +9,11 @@ import { getFeaturedReviews } from "@/lib/reviews";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 
 export const metadata: Metadata = {
-  title: "Find Your Dream Home | Kristina Eck Real Estate Team",
-  description: "Discover your perfect home with Kristina Eck Real Estate Team. Browse MLS listings, featured properties, and get expert guidance from experienced real estate professionals. Over 15 years of trusted service.",
+  title: "The Right Agent Makes A Big Difference | Kristina Eck Real Estate Team",
+  description: "We've GOT you covered! Expert real estate services with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.",
   openGraph: {
-    title: "Find Your Dream Home | Kristina Eck Real Estate Team",
-    description: "Discover your perfect home with expert guidance from Kristina Eck Real Estate Team. Browse featured properties and MLS listings.",
+    title: "The Right Agent Makes A Big Difference | Kristina Eck Real Estate Team",
+    description: "We've GOT you covered! Over 23 years of experience serving Cache Valley and Bear Lake. Licensed in Utah and Idaho.",
     images: ["/images/_MG_4454Edit.webp"],
   },
 };
@@ -30,16 +30,16 @@ export default function HomePage() {
             {/* Left Column - Content */}
             <div className="space-y-8 lg:pr-8">
               <Badge variant="secondary" className="text-sm px-4 py-1">
-                Your Trusted Real Estate Partner
+                Licensed in Utah & Idaho
               </Badge>
 
               <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-foreground">
-                Find Your Dream Home with
-                <span className="text-primary block mt-2">Kristina Eck Real Estate Team</span>
+                The Right Agent Makes
+                <span className="text-primary block mt-2">A Big Difference</span>
               </h1>
 
               <p className="text-lg md:text-xl text-muted-foreground">
-                We specialize in helping families find their perfect home. With over 20 years of experience and deep local knowledge of Cache Valley,
+                <strong>We've GOT you.</strong> With over 23 years of experience and deep local knowledge of Cache Valley and Bear Lake,
                 we make your real estate journey seamless and rewarding.
               </p>
 
@@ -60,7 +60,7 @@ export default function HomePage() {
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 pt-8 border-t border-border/50">
                 <div>
-                  <div className="text-3xl font-bold text-primary">20+</div>
+                  <div className="text-3xl font-bold text-primary">23+</div>
                   <div className="text-sm text-muted-foreground">Years Experience</div>
                 </div>
                 <div>

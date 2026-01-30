@@ -60,7 +60,16 @@ const demoProperties = [
 
 export async function FeaturedProperties() {
   // Try to fetch from IDX Broker, fall back to demo properties
-  let properties = await idxBroker.getFeaturedProperties(3);
+  let properties: any[] = [];
+
+  // Try saved links first, then featured properties
+  const savedLinks = await idxBroker.getSavedLinks();
+  if (savedLinks.length > 0) {
+    const allProperties = await idxBroker.getPropertiesFromSavedLink(savedLinks[0].id);
+    properties = allProperties.slice(0, 3); // Take first 3
+  } else {
+    properties = await idxBroker.getFeaturedProperties(3);
+  }
 
   // If no properties from API, use demo data
   if (properties.length === 0) {

@@ -57,13 +57,9 @@ export interface IDXSearchParams {
 
 class IDXBrokerClient {
   private apiKey: string;
-  private partnerKey: string;
-  private accountID: string;
 
   constructor() {
     this.apiKey = process.env.IDX_BROKER_API_KEY || '';
-    this.partnerKey = process.env.IDX_BROKER_PARTNER_KEY || '';
-    this.accountID = process.env.IDX_BROKER_ACCOUNT_ID || '';
   }
 
   private async request<T>(endpoint: string, options: RequestInit = {}): Promise<T> {
@@ -71,12 +67,16 @@ class IDXBrokerClient {
       throw new Error('IDX Broker API key not configured. Please add IDX_BROKER_API_KEY to your .env file');
     }
 
-    const headers = {
-      'Content-Type': 'application/x-www-form-urlencoded',
+    const headers: Record<string, string> = {
       'accesskey': this.apiKey,
       'outputtype': 'json',
-      ...options.headers,
+      ...options.headers as Record<string, string>,
     };
+
+    // Only add Content-Type for POST/PUT requests with body
+    if (options.method && ['POST', 'PUT'].includes(options.method)) {
+      headers['Content-Type'] = 'application/x-www-form-urlencoded';
+    }
 
     const response = await fetch(`${IDX_API_BASE}${endpoint}`, {
       ...options,
@@ -85,19 +85,46 @@ class IDXBrokerClient {
     });
 
     if (!response.ok) {
-      throw new Error(`IDX Broker API error: ${response.status} ${response.statusText}`);
+      const errorText = await response.text().catch(() => 'Unknown error');
+      throw new Error(`IDX Broker API error: ${response.status} ${response.statusText} - ${errorText}`);
     }
 
-    return response.json();
+    // Handle empty responses (204 No Content or empty body)
+    const text = await response.text();
+    if (!text || text.trim() === '') {
+      console.log(`Empty response from ${endpoint} - likely no data available`);
+      return [] as T;
+    }
+
+    try {
+      return JSON.parse(text);
+    } catch (error) {
+      console.error(`Failed to parse JSON response from ${endpoint}:`, text);
+      throw new Error(`Invalid JSON response from IDX Broker API`);
+    }
   }
 
   /**
-   * Get featured properties
+   * Test API connection and get account info
+   */
+  async testConnection(): Promise<boolean> {
+    try {
+      const data = await this.request<any>('/clients/savedlinks');
+      console.log('IDX Broker API connection successful!');
+      return true;
+    } catch (error) {
+      console.error('IDX Broker API connection failed:', error);
+      return false;
+    }
+  }
+
+  /**
+   * Get featured properties (agent's active listings)
    */
   async getFeaturedProperties(limit: number = 6): Promise<IDXProperty[]> {
     try {
       const data = await this.request<IDXProperty[]>('/clients/featured');
-      return data.slice(0, limit);
+      return Array.isArray(data) ? data.slice(0, limit) : [];
     } catch (error) {
       console.error('Error fetching featured properties:', error);
       return [];
@@ -105,7 +132,7 @@ class IDXBrokerClient {
   }
 
   /**
-   * Search properties
+   * Search properties using search query
    */
   async searchProperties(params: IDXSearchParams = {}): Promise<IDXProperty[]> {
     try {
@@ -120,8 +147,8 @@ class IDXBrokerClient {
       if (params.city) queryParams.append('ccz', params.city);
       if (params.zipcode) queryParams.append('zip', params.zipcode);
 
-      const data = await this.request<IDXProperty[]>(`/clients/search?${queryParams.toString()}`);
-      return data;
+      const data = await this.request<IDXProperty[]>(`/clients/searchquery?${queryParams.toString()}`);
+      return Array.isArray(data) ? data : [];
     } catch (error) {
       console.error('Error searching properties:', error);
       return [];
@@ -129,11 +156,16 @@ class IDXBrokerClient {
   }
 
   /**
-   * Get property details by listing ID
+   * Get property details by IDX ID and listing ID
+   * @param idxID - The IDX ID of the property
+   * @param listingID - The MLS listing ID
    */
-  async getPropertyDetails(listingID: string): Promise<IDXProperty | null> {
+  async getPropertyDetails(idxID: string, listingID?: string): Promise<IDXProperty | null> {
     try {
-      const data = await this.request<IDXProperty>(`/clients/listing/${listingID}`);
+      const endpoint = listingID
+        ? `/clients/listing/${idxID}/${listingID}`
+        : `/clients/listing/${idxID}`;
+      const data = await this.request<IDXProperty>(endpoint);
       return data;
     } catch (error) {
       console.error('Error fetching property details:', error);
@@ -142,14 +174,43 @@ class IDXBrokerClient {
   }
 
   /**
-   * Get all active properties
+   * Get all active properties (uses featured listings)
+   * Note: To get all MLS properties, you need to use saved links endpoint
    */
   async getActiveProperties(limit: number = 50): Promise<IDXProperty[]> {
     try {
-      const data = await this.request<IDXProperty[]>('/clients/properties');
-      return data.slice(0, limit);
+      // Featured properties are the agent's active listings
+      const data = await this.request<IDXProperty[]>('/clients/featured');
+      return Array.isArray(data) ? data.slice(0, limit) : [];
     } catch (error) {
       console.error('Error fetching active properties:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Get saved links (search queries saved in IDX Broker)
+   */
+  async getSavedLinks(): Promise<{ id: string; name: string }[]> {
+    try {
+      const data = await this.request<any[]>('/clients/savedlinks');
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      console.error('Error fetching saved links:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Get properties from a saved link
+   */
+  async getPropertiesFromSavedLink(savedLinkId: string): Promise<IDXProperty[]> {
+    try {
+      const data = await this.request<IDXProperty[]>(`/clients/properties/${savedLinkId}`);
+      console.log(`Fetched ${data.length} properties from saved link ID: ${savedLinkId}`);
+      return Array.isArray(data) ? data : [];
+    } catch (error) {
+      console.error(`Error fetching properties for saved link ${savedLinkId}:`, error);
       return [];
     }
   }

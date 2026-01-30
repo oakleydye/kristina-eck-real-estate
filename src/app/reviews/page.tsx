@@ -53,7 +53,7 @@ export default function ReviewsPage() {
             </p>
 
             {/* Stats */}
-            {(averageRating > 0 || totalReviews > 0) && (
+            {(averageRating > 0 && totalReviews > 0) && (
               <div className="flex items-center justify-center gap-8 pt-6">
                 {averageRating > 0 && (
                   <>
@@ -77,70 +77,36 @@ export default function ReviewsPage() {
         </div>
       </section>
 
-      {/* Reviews Grid */}
+      {/* Reviews Masonry Layout */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-5xl mx-auto">
-            <div className="grid gap-6">
+            <div className="columns-1 md:columns-2 gap-8">
               {reviews.map((review) => (
-                <Card key={review.id} className="border-border/50 hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6 md:p-8">
-                    <div className="flex flex-col md:flex-row md:items-start gap-6">
-                      {/* Avatar Circle with Initial */}
-                      <div className="flex-shrink-0">
-                        <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl font-bold text-primary">
-                            {review.name.charAt(0)}
-                          </span>
-                        </div>
-                      </div>
+                <Card
+                  key={review.id}
+                  className="border border-border hover:shadow-lg transition-shadow mb-8 break-inside-avoid"
+                >
+                  <CardContent className="p-8 flex flex-col">
+                    {/* Review Text */}
+                    <div className="text-muted-foreground leading-relaxed mb-6 text-center">
+                      {review.review.split('\n').map((paragraph, idx) => (
+                        <p key={idx} className="mb-3">
+                          {paragraph}
+                        </p>
+                      ))}
+                    </div>
 
-                      {/* Review Content */}
-                      <div className="flex-1 space-y-4">
-                        {/* Header */}
-                        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
-                          <div>
-                            <h3 className="text-xl font-bold text-foreground">
-                              {review.name}
-                            </h3>
-                            {(review.location || review.propertyType) && (
-                              <div className="flex items-center gap-3 text-sm text-muted-foreground mt-1">
-                                {review.location && (
-                                  <span className="flex items-center gap-1">
-                                    <MapPin className="h-3 w-3" />
-                                    {review.location}
-                                  </span>
-                                )}
-                                {review.propertyType && (
-                                  <span className="flex items-center gap-1">
-                                    <Home className="h-3 w-3" />
-                                    {review.propertyType}
-                                  </span>
-                                )}
-                              </div>
-                            )}
-                          </div>
-                          <div className="flex flex-col items-start sm:items-end gap-1">
-                            {review.rating && <StarRating rating={review.rating} />}
-                            {review.date && (
-                              <span className="text-sm text-muted-foreground">
-                                {formatReviewDate(review.date)}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-
-                        {/* Review Text */}
-                        <div className="text-muted-foreground leading-relaxed space-y-4">
-                          {review.review.split('\n').map((paragraph, idx) => (
-                            <p key={idx}>
-                              {idx === 0 && '"'}
-                              {paragraph}
-                              {idx === review.review.split('\n').length - 1 && '"'}
-                            </p>
-                          ))}
-                        </div>
-                      </div>
+                    {/* Author Name */}
+                    <div className="text-center pt-6 border-t border-border">
+                      <p className="font-semibold text-foreground text-lg">
+                        {review.name}
+                      </p>
+                      {review.location && (
+                        <p className="text-sm text-muted-foreground mt-1">
+                          {review.location}
+                        </p>
+                      )}
                     </div>
                   </CardContent>
                 </Card>

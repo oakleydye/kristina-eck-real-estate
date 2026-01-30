@@ -120,10 +120,10 @@ export function Footer() {
               <li className="flex items-center gap-2 text-sm text-muted-foreground">
                 <Mail className="h-4 w-4 text-primary" />
                 <a
-                  href="mailto:kristina@kwlogan.com"
+                  href="mailto:KRISTINAECK10@gmail.com"
                   className="hover:text-foreground transition-colors"
                 >
-                  kristina@kwlogan.com
+                  KRISTINAECK10@gmail.com
                 </a>
               </li>
               <li className="flex items-start gap-2 text-sm text-muted-foreground">
@@ -157,7 +157,7 @@ export function Footer() {
                 All rights reserved.
               </p>
               <p className="text-xs text-muted-foreground">
-                License #5504469-PB00
+                License #9471894-AB00 | Licensed in Utah & Idaho
               </p>
             </div>
           </div>

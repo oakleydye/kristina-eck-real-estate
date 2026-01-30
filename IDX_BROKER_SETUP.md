@@ -10,12 +10,9 @@ This guide will help you set up and configure IDX Broker integration for your re
    - Copy your API Key, Partner Key, and Account ID
 
 2. **Configure Environment Variables**
-   - Copy `.env.example` to `.env`
-   - Add your IDX Broker credentials:
+   - Add your IDX Broker credentials to your `.env` file:
    ```env
    IDX_BROKER_API_KEY="your-api-key-here"
-   IDX_BROKER_PARTNER_KEY="your-partner-key-here"
-   IDX_BROKER_ACCOUNT_ID="your-account-id-here"
    IDX_BROKER_SUBDOMAIN="your-subdomain.idxbroker.com"
    ```
 

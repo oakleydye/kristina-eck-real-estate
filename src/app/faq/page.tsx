@@ -204,32 +204,27 @@ export default function FAQPage() {
       {/* FAQ Content */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-4xl mx-auto space-y-12">
-            {faqCategories.map((category, idx) => (
-              <div key={idx}>
-                <h2 className="text-3xl font-bold text-foreground mb-6">
-                  {category.title}
-                </h2>
-                <Accordion type="single" collapsible className="space-y-4">
-                  {category.questions.map((item, qIdx) => (
-                    <AccordionItem
-                      key={qIdx}
-                      value={`${idx}-${qIdx}`}
-                      className="border border-border rounded-lg px-6"
-                    >
-                      <AccordionTrigger className="text-left hover:no-underline">
-                        <span className="font-semibold text-foreground pr-4">
-                          {item.q}
-                        </span>
-                      </AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground pt-2 pb-4">
-                        {item.a}
-                      </AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            ))}
+          <div className="max-w-4xl mx-auto">
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqCategories.flatMap((category, idx) =>
+                category.questions.map((item, qIdx) => (
+                  <AccordionItem
+                    key={`${idx}-${qIdx}`}
+                    value={`${idx}-${qIdx}`}
+                    className="border-b border-border last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-left hover:no-underline py-6">
+                      <span className="text-foreground pr-4 text-lg">
+                        {item.q}
+                      </span>
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground pb-6 text-base leading-relaxed">
+                      {item.a}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))
+              )}
+            </Accordion>
           </div>
         </div>
       </section>

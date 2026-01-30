@@ -18,8 +18,16 @@ export const dynamic = 'force-dynamic';
 export const revalidate = 300; // Revalidate every 5 minutes
 
 export default async function PropertiesAPIPage() {
-  // Fetch properties from IDX Broker API
-  const properties = await idxBroker.getActiveProperties(50);
+  // Test connection first
+  const connectionOk = await idxBroker.testConnection();
+
+  // Try to get saved links and fetch properties from the first one
+  let properties: any[] = [];
+  let savedLinks: any[] = [];
+
+  if (connectionOk) {
+    properties = await idxBroker.getPropertiesFromSavedLink('20002');
+  }
 
   return (
     <div className="flex flex-col">
@@ -68,24 +76,74 @@ export default async function PropertiesAPIPage() {
             <div className="text-center py-20">
               <Home className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
               <h3 className="text-xl font-semibold text-foreground mb-2">
-                No properties available
+                {connectionOk ? 'No MLS Properties Found' : 'API Connection Issue'}
               </h3>
               <p className="text-muted-foreground mb-6">
-                Please configure your IDX Broker API credentials in the .env file.
+                {connectionOk
+                  ? savedLinks.length === 0
+                    ? 'Your API is connected, but you need to create a Saved Link in IDX Broker to display MLS properties.'
+                    : 'No properties found in your saved link. The search may not have any results.'
+                  : 'Please configure your IDX Broker API credentials in the .env file.'}
               </p>
-              <div className="max-w-md mx-auto text-left bg-muted/30 p-4 rounded-lg">
-                <p className="text-sm text-muted-foreground mb-2">Add to your .env file:</p>
-                <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
-{`IDX_BROKER_API_KEY="your-api-key"
-IDX_BROKER_PARTNER_KEY="your-partner-key"
-IDX_BROKER_ACCOUNT_ID="your-account-id"`}
-                </pre>
-              </div>
+              {!connectionOk && (
+                <div className="max-w-md mx-auto text-left bg-muted/30 p-4 rounded-lg">
+                  <p className="text-sm text-muted-foreground mb-2">Add to your .env file:</p>
+                  <pre className="text-xs bg-background p-3 rounded overflow-x-auto">
+{`IDX_BROKER_API_KEY="your-api-key"`}
+                  </pre>
+                </div>
+              )}
+              {connectionOk && savedLinks.length === 0 && (
+                <div className="max-w-2xl mx-auto text-left bg-muted/30 p-6 rounded-lg">
+                  <p className="text-sm font-semibold text-foreground mb-4">How to create a Saved Link to display MLS properties:</p>
+                  <ol className="text-sm text-muted-foreground space-y-3 list-decimal list-inside ml-2">
+                    <li>
+                      Log in to <a href="https://middleware.idxbroker.com/mgmt/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">IDX Broker Dashboard</a>
+                    </li>
+                    <li>
+                      Go to <strong className="text-foreground">MLS Data → Saved Links</strong>
+                    </li>
+                    <li>
+                      Click <strong className="text-foreground">Create New Saved Link</strong>
+                    </li>
+                    <li>
+                      Set up your search criteria (e.g., "All Active Residential" with property type, status, etc.)
+                    </li>
+                    <li>
+                      Name it something like "All Active Properties" or "Featured Homes"
+                    </li>
+                    <li>
+                      Save the link - it will automatically appear here once created
+                    </li>
+                  </ol>
+                  <p className="text-xs text-muted-foreground mt-4 italic">
+                    Note: Saved Links are essentially saved search queries that define which MLS properties to display on your website.
+                  </p>
+                </div>
+              )}
+              {connectionOk && savedLinks.length > 0 && (
+                <div className="max-w-md mx-auto text-left bg-muted/30 p-4 rounded-lg">
+                  <p className="text-sm font-semibold text-foreground mb-2">Using Saved Link:</p>
+                  <p className="text-sm text-muted-foreground mb-2">
+                    {savedLinks[0].name || `Link ID: ${savedLinks[0].id}`}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    Adjust the search criteria in IDX Broker dashboard to see different properties.
+                  </p>
+                </div>
+              )}
             </div>
           ) : (
             <>
-              <div className="mb-6 text-sm text-muted-foreground">
-                Showing {properties.length} properties from IDX Broker
+              <div className="mb-6 flex items-center justify-between">
+                <div className="text-sm text-muted-foreground">
+                  Showing {properties.length} properties from IDX Broker
+                  {savedLinks.length > 0 && (
+                    <span className="ml-2">
+                      (Saved Link: <strong className="text-foreground">{savedLinks[0].name || savedLinks[0].id}</strong>)
+                    </span>
+                  )}
+                </div>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

@@ -82,7 +82,7 @@ export default function ContactPage() {
                           </a>
                         </CardDescription>
                         <CardDescription className="text-sm mt-1">
-                          Monday - Friday, 9:00 AM - 6:00 PM
+                          7 Days a Week, 8:00 AM - 8:00 PM
                         </CardDescription>
                       </div>
                     </div>
@@ -98,8 +98,8 @@ export default function ContactPage() {
                       <div>
                         <CardTitle className="text-lg mb-2">Email</CardTitle>
                         <CardDescription className="text-base">
-                          <a href="mailto:kristina@kwlogan.com" className="hover:text-foreground transition-colors">
-                            kristina@kwlogan.com
+                          <a href="mailto:KRISTINAECK10@gmail.com" className="hover:text-foreground transition-colors">
+                            KRISTINAECK10@gmail.com
                           </a>
                         </CardDescription>
                         <CardDescription className="text-sm mt-1">

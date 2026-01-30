@@ -7,7 +7,7 @@ import { Metadata } from 'next';
 // Base site configuration
 export const siteConfig = {
   name: 'Kristina Eck Real Estate Team',
-  description: 'Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 15 years of experience.',
+  description: 'Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.',
   url: 'https://kristinaeck.com', // Update with your actual domain
   ogImage: '/images/_MG_4454Edit.webp',
   links: {
@@ -18,7 +18,7 @@ export const siteConfig = {
   },
   contact: {
     phone: '(435) 757-7259',
-    email: 'kristina@kwlogan.com',
+    email: 'KRISTINAECK10@gmail.com',
     address: {
       street: '33 North Main',
       city: 'Logan',
@@ -27,11 +27,11 @@ export const siteConfig = {
       country: 'United States',
     },
   },
-  license: 'LICENSE_NUMBER_PLACEHOLDER', // Replace with actual license number
+  license: '9471894-AB00', // Utah and Idaho license
   business: {
     name: 'Kristina Eck Real Estate Team',
     legalName: 'Kristina Eck Real Estate Team, LLC',
-    foundingDate: '2009',
+    foundingDate: '2002',
     priceRange: '$$',
   },
 };
@@ -147,15 +147,9 @@ export function generateLocalBusinessSchema() {
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
-        opens: '09:00',
-        closes: '18:00',
-      },
-      {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: 'Saturday',
-        opens: '10:00',
-        closes: '16:00',
+        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        opens: '08:00',
+        closes: '20:00',
       },
     ],
   };

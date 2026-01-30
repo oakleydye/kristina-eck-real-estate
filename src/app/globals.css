@@ -6,8 +6,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-lora);
+  --font-serif: var(--font-playfair);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -48,38 +48,38 @@
 
 :root {
   --radius: 0.625rem;
-  /* Fall Pastel Theme - Soft pinks and muted terracotta */
-  --background: oklch(0.98 0.01 60);
-  --foreground: oklch(0.25 0.02 30);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.25 0.02 30);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.25 0.02 30);
-  --primary: oklch(0.65 0.09 32); /* Muted terracotta/brown */
-  --primary-foreground: oklch(0.98 0.01 60);
-  --secondary: oklch(0.85 0.12 15); /* Soft pink/rose - more vibrant */
-  --secondary-foreground: oklch(0.25 0.02 30);
-  --muted: oklch(0.95 0.02 50);
-  --muted-foreground: oklch(0.50 0.03 40);
-  --accent: oklch(0.88 0.12 20); /* Light pink instead of peach */
+  /* Beige/Rose Gold Theme - matching old site */
+  --background: oklch(0.96 0.015 50); /* Beige/cream background */
+  --foreground: oklch(0.20 0.01 30); /* Dark brown/black text */
+  --card: oklch(0.98 0.01 50);
+  --card-foreground: oklch(0.20 0.01 30);
+  --popover: oklch(0.98 0.01 50);
+  --popover-foreground: oklch(0.20 0.01 30);
+  --primary: oklch(0.58 0.08 25); /* Rose gold/mauve */
+  --primary-foreground: oklch(1 0 0);
+  --secondary: oklch(0.88 0.04 45); /* Light beige for badges */
+  --secondary-foreground: oklch(0.40 0.04 30);
+  --muted: oklch(0.92 0.015 50);
+  --muted-foreground: oklch(0.45 0.02 30);
+  --accent: oklch(0.90 0.03 40); /* Subtle tan accent */
   --accent-foreground: oklch(0.25 0.02 30);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.92 0.02 50);
-  --input: oklch(0.92 0.02 50);
-  --ring: oklch(0.65 0.09 32);
-  --chart-1: oklch(0.65 0.09 32);
-  --chart-2: oklch(0.75 0.12 25);
-  --chart-3: oklch(0.80 0.10 60);
-  --chart-4: oklch(0.85 0.12 15);
-  --chart-5: oklch(0.65 0.12 35);
-  --sidebar: oklch(0.98 0.01 50);
-  --sidebar-foreground: oklch(0.25 0.02 30);
-  --sidebar-primary: oklch(0.65 0.09 32);
-  --sidebar-primary-foreground: oklch(0.98 0.01 60);
-  --sidebar-accent: oklch(0.95 0.02 50);
-  --sidebar-accent-foreground: oklch(0.25 0.02 30);
-  --sidebar-border: oklch(0.92 0.02 50);
-  --sidebar-ring: oklch(0.65 0.09 32);
+  --border: oklch(0.85 0.015 45);
+  --input: oklch(0.90 0.015 45);
+  --ring: oklch(0.58 0.08 25);
+  --chart-1: oklch(0.58 0.08 25);
+  --chart-2: oklch(0.65 0.09 30);
+  --chart-3: oklch(0.75 0.08 35);
+  --chart-4: oklch(0.82 0.06 40);
+  --chart-5: oklch(0.88 0.04 45);
+  --sidebar: oklch(0.96 0.015 50);
+  --sidebar-foreground: oklch(0.20 0.01 30);
+  --sidebar-primary: oklch(0.58 0.08 25);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.015 50);
+  --sidebar-accent-foreground: oklch(0.20 0.01 30);
+  --sidebar-border: oklch(0.85 0.015 45);
+  --sidebar-ring: oklch(0.58 0.08 25);
 }
 
 .dark {
@@ -122,6 +122,17 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+    font-weight: 400; /* Thin, elegant weight */
+    letter-spacing: 0.01em; /* Slight spacing for elegance */
+  }
+  h1 {
+    font-weight: 400; /* Keep thin even for main headings */
+  }
+  h2 {
+    font-weight: 400;
   }
 }

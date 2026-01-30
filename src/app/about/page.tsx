@@ -16,18 +16,20 @@ import { generatePersonSchema, siteConfig } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About Kristina Eck | Experienced Real Estate Broker",
   description:
-    "Meet Kristina Eck, a licensed real estate broker with over 15 years of experience. 500+ homes sold, 98% satisfaction rate, and dedicated to helping you find your dream home.",
+    "Meet Kristina Eck, a licensed real estate broker with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake. 500+ homes sold, 98% satisfaction rate.",
   keywords: [
     "Kristina Eck",
     "real estate broker",
     "experienced realtor",
     "local real estate expert",
     "top real estate agent",
+    "Bear Lake realtor",
+    "Cache Valley real estate",
   ],
   openGraph: {
     title: "About Kristina Eck - Licensed Real Estate Broker",
     description:
-      "Meet Kristina Eck, an experienced real estate broker. 15+ years of experience, 500+ homes sold, 98% satisfaction rate.",
+      "Meet Kristina Eck, an experienced real estate broker. 23+ years of experience, licensed in Utah and Idaho. Specializing in Cache Valley and Bear Lake.",
     images: ["/images/_MG_4255EditF.webp"],
   },
 };
@@ -187,11 +189,11 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-muted-foreground">
                   <p className="text-lg">
-                    With over 20 years of experience in the real estate
+                    With over 23 years of experience in the real estate
                     industry, Kristina has built a reputation as one of Northern
-                    Utah's most trusted and accomplished realtors. Her
+                    Utah and Idaho's most trusted and accomplished realtors. Her
                     dedication to client satisfaction and deep knowledge of the
-                    local market have helped hundreds of families find their
+                    Cache Valley and Bear Lake markets have helped hundreds of families find their
                     dream homes.
                   </p>
                   <p className="text-lg">
@@ -217,11 +219,11 @@ export default function AboutPage() {
                       Specialties
                     </h3>
                     <ul className="space-y-2 text-muted-foreground">
+                      <li>• Cache Valley & Bear Lake Specialist</li>
                       <li>• Residential Sales</li>
                       <li>• New Construction</li>
                       <li>• First-Time Buyers</li>
                       <li>• Investment Properties</li>
-                      <li>• Relocation Services</li>
                     </ul>
                   </div>
                   <div>
@@ -232,7 +234,7 @@ export default function AboutPage() {
                     <ul className="space-y-2 text-muted-foreground">
                       <li>• Licensed Broker, Utah & Idaho</li>
                       <li>• GRI (Graduate, Realtor Institute) designee</li>
-                      <li>• License #5504469-PB00</li>
+                      <li>• License #9471894-AB00</li>
                     </ul>
                   </div>
                 </div>
