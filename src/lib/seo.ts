@@ -2,37 +2,38 @@
  * SEO Configuration and Utilities
  */
 
-import { Metadata } from 'next';
+import { Metadata } from "next";
 
 // Base site configuration
 export const siteConfig = {
-  name: 'Kristina Eck Real Estate Team',
-  description: 'Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.',
-  url: 'https://kristinaeck.com', // Update with your actual domain
-  ogImage: '/images/_MG_4454Edit.webp',
+  name: "Kristina Eck Real Estate Team",
+  description:
+    "Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.",
+  url: "https://kristinaeck.com", // Update with your actual domain
+  ogImage: "/images/_MG_4454Edit.webp",
   links: {
-    instagram: 'https://www.instagram.com/kristinaeckteam/',
-    facebook: '', // Add if available
-    twitter: '', // Add if available
-    linkedin: '', // Add if available
+    instagram: "https://www.instagram.com/kristinaeckteam/",
+    facebook: "", // Add if available
+    twitter: "", // Add if available
+    linkedin: "", // Add if available
   },
   contact: {
-    phone: '(435) 757-7259',
-    email: 'KRISTINAECK10@gmail.com',
+    phone: "(435) 757-7259",
+    email: "kristinaeck10@gmail.com",
     address: {
-      street: '33 North Main',
-      city: 'Logan',
-      state: 'UT',
-      zip: '84321',
-      country: 'United States',
+      street: "33 North Main",
+      city: "Logan",
+      state: "UT",
+      zip: "84321",
+      country: "United States",
     },
   },
-  license: '9471894-AB00', // Utah and Idaho license
+  license: "9471894-AB00", // Utah and Idaho license
   business: {
-    name: 'Kristina Eck Real Estate Team',
-    legalName: 'Kristina Eck Real Estate Team, LLC',
-    foundingDate: '2002',
-    priceRange: '$$',
+    name: "Kristina Eck Real Estate Team",
+    legalName: "Kristina Eck Real Estate Team, LLC",
+    foundingDate: "2002",
+    priceRange: "$$",
   },
 };
 
@@ -45,32 +46,32 @@ export const defaultMetadata: Metadata = {
   },
   description: siteConfig.description,
   keywords: [
-    'real estate',
-    'homes for sale',
-    'property listings',
-    'real estate agent',
-    'buy home',
-    'sell home',
-    'residential real estate',
-    'Kristina Eck',
-    'real estate team',
-    'MLS listings',
-    'home buying',
-    'home selling',
-    'property search',
-    'real estate services',
+    "real estate",
+    "homes for sale",
+    "property listings",
+    "real estate agent",
+    "buy home",
+    "sell home",
+    "residential real estate",
+    "Kristina Eck",
+    "real estate team",
+    "MLS listings",
+    "home buying",
+    "home selling",
+    "property search",
+    "real estate services",
   ],
-  authors: [{ name: 'Kristina Eck Real Estate Team' }],
-  creator: 'Kristina Eck Real Estate Team',
-  publisher: 'Kristina Eck Real Estate Team',
+  authors: [{ name: "Kristina Eck Real Estate Team" }],
+  creator: "Kristina Eck Real Estate Team",
+  publisher: "Kristina Eck Real Estate Team",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: siteConfig.url,
     title: siteConfig.name,
     description: siteConfig.description,
@@ -85,7 +86,7 @@ export const defaultMetadata: Metadata = {
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     images: [siteConfig.ogImage],
@@ -96,15 +97,15 @@ export const defaultMetadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   verification: {
     // Add these when you get them
-    google: 'your-google-verification-code',
-    yandex: 'your-yandex-verification-code',
+    google: "your-google-verification-code",
+    yandex: "your-yandex-verification-code",
     // bing: 'your-bing-verification-code',
   },
 };
@@ -112,8 +113,8 @@ export const defaultMetadata: Metadata = {
 // Generate structured data for LocalBusiness
 export function generateLocalBusinessSchema() {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'RealEstateAgent',
+    "@context": "https://schema.org",
+    "@type": "RealEstateAgent",
     name: siteConfig.business.name,
     legalName: siteConfig.business.legalName,
     url: siteConfig.url,
@@ -125,7 +126,7 @@ export function generateLocalBusinessSchema() {
     // @ts-ignore - license is a valid property
     license: siteConfig.license,
     address: {
-      '@type': 'PostalAddress',
+      "@type": "PostalAddress",
       streetAddress: siteConfig.contact.address.street,
       addressLocality: siteConfig.contact.address.city,
       addressRegion: siteConfig.contact.address.state,
@@ -133,23 +134,28 @@ export function generateLocalBusinessSchema() {
       addressCountry: siteConfig.contact.address.country,
     },
     geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.7128', // Update with actual coordinates
-      longitude: '-74.0060',
+      "@type": "GeoCoordinates",
+      latitude: "40.7128", // Update with actual coordinates
+      longitude: "-74.0060",
     },
     areaServed: {
-      '@type': 'City',
+      "@type": "City",
       name: siteConfig.contact.address.city,
     },
-    sameAs: [
-      siteConfig.links.instagram,
-    ].filter(Boolean),
+    sameAs: [siteConfig.links.instagram].filter(Boolean),
     openingHoursSpecification: [
       {
-        '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '08:00',
-        closes: '20:00',
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+        ],
+        opens: "08:00",
+        closes: "20:00",
       },
     ],
   };
@@ -158,8 +164,8 @@ export function generateLocalBusinessSchema() {
 // Generate structured data for Organization
 export function generateOrganizationSchema() {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Organization',
+    "@context": "https://schema.org",
+    "@type": "Organization",
     name: siteConfig.business.name,
     url: siteConfig.url,
     logo: `${siteConfig.url}/images/kristina-eck-team-logo.svg`,
@@ -167,26 +173,26 @@ export function generateOrganizationSchema() {
     telephone: siteConfig.contact.phone,
     email: siteConfig.contact.email,
     address: {
-      '@type': 'PostalAddress',
+      "@type": "PostalAddress",
       streetAddress: siteConfig.contact.address.street,
       addressLocality: siteConfig.contact.address.city,
       addressRegion: siteConfig.contact.address.state,
       postalCode: siteConfig.contact.address.zip,
       addressCountry: siteConfig.contact.address.country,
     },
-    sameAs: [
-      siteConfig.links.instagram,
-    ].filter(Boolean),
+    sameAs: [siteConfig.links.instagram].filter(Boolean),
   };
 }
 
 // Generate structured data for BreadcrumbList
-export function generateBreadcrumbSchema(items: { name: string; url: string }[]) {
+export function generateBreadcrumbSchema(
+  items: { name: string; url: string }[],
+) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
     itemListElement: items.map((item, index) => ({
-      '@type': 'ListItem',
+      "@type": "ListItem",
       position: index + 1,
       name: item.name,
       item: `${siteConfig.url}${item.url}`,
@@ -209,43 +215,43 @@ export function generatePropertySchema(property: {
   images: string[];
 }) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
+    "@context": "https://schema.org",
+    "@type": "Product",
     name: property.name,
     description: property.description,
     offers: {
-      '@type': 'Offer',
+      "@type": "Offer",
       price: property.price,
-      priceCurrency: 'USD',
-      availability: 'https://schema.org/InStock',
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
       seller: {
-        '@type': 'RealEstateAgent',
+        "@type": "RealEstateAgent",
         name: siteConfig.business.name,
       },
     },
     address: {
-      '@type': 'PostalAddress',
+      "@type": "PostalAddress",
       streetAddress: property.address,
       addressLocality: property.city,
       addressRegion: property.state,
       postalCode: property.zipcode,
-      addressCountry: 'US',
+      addressCountry: "US",
     },
     image: property.images,
     additionalProperty: [
       {
-        '@type': 'PropertyValue',
-        name: 'Bedrooms',
+        "@type": "PropertyValue",
+        name: "Bedrooms",
         value: property.bedrooms,
       },
       {
-        '@type': 'PropertyValue',
-        name: 'Bathrooms',
+        "@type": "PropertyValue",
+        name: "Bathrooms",
         value: property.bathrooms,
       },
       {
-        '@type': 'PropertyValue',
-        name: 'Square Feet',
+        "@type": "PropertyValue",
+        name: "Square Feet",
         value: property.sqft,
       },
     ],
@@ -261,15 +267,15 @@ export function generatePersonSchema(person: {
   image?: string;
 }) {
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Person',
+    "@context": "https://schema.org",
+    "@type": "Person",
     name: person.name,
     jobTitle: person.role,
     description: person.bio,
     email: person.email,
     image: person.image,
     worksFor: {
-      '@type': 'Organization',
+      "@type": "Organization",
       name: siteConfig.business.name,
     },
   };

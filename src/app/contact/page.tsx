@@ -1,6 +1,12 @@
-"use client"
+"use client";
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -41,7 +47,8 @@ export default function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg text-muted-foreground">
-              We'd love to hear from you. Reach out and let's start your real estate journey together.
+              We'd love to hear from you. Reach out and let's start your real
+              estate journey together.
             </p>
           </div>
         </div>
@@ -55,8 +62,9 @@ export default function ContactPage() {
               Let's Talk
             </h2>
             <p className="text-lg text-muted-foreground">
-              Whether you're buying, selling, or just have questions, we're here to help.
-              Reach out through any of the channels below or fill out the contact form.
+              Whether you're buying, selling, or just have questions, we're here
+              to help. Reach out through any of the channels below or fill out
+              the contact form.
             </p>
           </div>
         </div>
@@ -69,84 +77,93 @@ export default function ContactPage() {
             {/* Contact Information */}
             <div className="space-y-6">
               <Card className="border-border/50">
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Phone className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg mb-2">Phone</CardTitle>
-                        <CardDescription className="text-base">
-                          <a href="tel:+14357577259" className="hover:text-foreground transition-colors">
-                            (435) 757-7259
-                          </a>
-                        </CardDescription>
-                        <CardDescription className="text-sm mt-1">
-                          7 Days a Week, 8:00 AM - 8:00 PM
-                        </CardDescription>
-                      </div>
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Phone className="h-6 w-6 text-primary" />
                     </div>
-                  </CardHeader>
-                </Card>
+                    <div>
+                      <CardTitle className="text-lg mb-2">Phone</CardTitle>
+                      <CardDescription className="text-base">
+                        <a
+                          href="tel:+14357577259"
+                          className="hover:text-foreground transition-colors"
+                        >
+                          (435) 757-7259
+                        </a>
+                      </CardDescription>
+                      <CardDescription className="text-sm mt-1">
+                        Monday - Saturday
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
 
-                <Card className="border-border/50">
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Mail className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg mb-2">Email</CardTitle>
-                        <CardDescription className="text-base">
-                          <a href="mailto:KRISTINAECK10@gmail.com" className="hover:text-foreground transition-colors">
-                            KRISTINAECK10@gmail.com
-                          </a>
-                        </CardDescription>
-                        <CardDescription className="text-sm mt-1">
-                          We'll respond within 24 hours
-                        </CardDescription>
-                      </div>
+              <Card className="border-border/50">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Mail className="h-6 w-6 text-primary" />
                     </div>
-                  </CardHeader>
-                </Card>
+                    <div>
+                      <CardTitle className="text-lg mb-2">Email</CardTitle>
+                      <CardDescription className="text-base">
+                        <a
+                          href="mailto:kristinaeck10@gmail.com"
+                          className="hover:text-foreground transition-colors"
+                        >
+                          kristinaeck10@gmail.com
+                        </a>
+                      </CardDescription>
+                      <CardDescription className="text-sm mt-1">
+                        We'll respond within 24 hours
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
 
-                <Card className="border-border/50">
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <MapPin className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg mb-2">Office</CardTitle>
-                        <CardDescription className="text-base">
-                          33 North Main<br />
-                          Logan, UT 84321
-                        </CardDescription>
-                        <CardDescription className="text-sm mt-1">
-                          Visit us by appointment
-                        </CardDescription>
-                      </div>
+              <Card className="border-border/50">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <MapPin className="h-6 w-6 text-primary" />
                     </div>
-                  </CardHeader>
-                </Card>
+                    <div>
+                      <CardTitle className="text-lg mb-2">Office</CardTitle>
+                      <CardDescription className="text-base">
+                        33 North Main
+                        <br />
+                        Logan, UT 84321
+                      </CardDescription>
+                      <CardDescription className="text-sm mt-1">
+                        Call or email to schedule an appointment
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
 
-                <Card className="border-border/50">
-                  <CardHeader>
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
-                        <Clock className="h-6 w-6 text-primary" />
-                      </div>
-                      <div>
-                        <CardTitle className="text-lg mb-2">Business Hours</CardTitle>
-                        <CardDescription className="text-base">
-                          Monday - Friday: 9:00 AM - 6:00 PM<br />
-                          Saturday: 10:00 AM - 4:00 PM<br />
-                          Sunday: By appointment only
-                        </CardDescription>
-                      </div>
+              <Card className="border-border/50">
+                <CardHeader>
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center flex-shrink-0">
+                      <Clock className="h-6 w-6 text-primary" />
                     </div>
-                  </CardHeader>
-                </Card>
+                    <div>
+                      <CardTitle className="text-lg mb-2">
+                        Business Hours
+                      </CardTitle>
+                      <CardDescription className="text-base">
+                        Monday - Saturday: Open - contact us anytime
+                        <br />
+                        Sunday: Closed
+                      </CardDescription>
+                    </div>
+                  </div>
+                </CardHeader>
+              </Card>
             </div>
 
             {/* Contact Form */}
@@ -155,13 +172,17 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className="text-2xl">Send us a Message</CardTitle>
                   <CardDescription>
-                    Fill out the form below and we'll get back to you as soon as possible.
+                    Fill out the form below and we'll get back to you as soon as
+                    possible.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="space-y-2">
-                      <label htmlFor="name" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="name"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Name *
                       </label>
                       <Input
@@ -169,12 +190,17 @@ export default function ContactPage() {
                         placeholder="Your full name"
                         required
                         value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, name: e.target.value })
+                        }
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="email" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="email"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Email *
                       </label>
                       <Input
@@ -183,12 +209,17 @@ export default function ContactPage() {
                         placeholder="your.email@example.com"
                         required
                         value={formData.email}
-                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, email: e.target.value })
+                        }
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="phone" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="phone"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Phone
                       </label>
                       <Input
@@ -196,12 +227,17 @@ export default function ContactPage() {
                         type="tel"
                         placeholder="(555) 123-4567"
                         value={formData.phone}
-                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, phone: e.target.value })
+                        }
                       />
                     </div>
 
                     <div className="space-y-2">
-                      <label htmlFor="message" className="text-sm font-medium text-foreground">
+                      <label
+                        htmlFor="message"
+                        className="text-sm font-medium text-foreground"
+                      >
                         Message *
                       </label>
                       <Textarea
@@ -210,7 +246,9 @@ export default function ContactPage() {
                         rows={6}
                         required
                         value={formData.message}
-                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                        onChange={(e) =>
+                          setFormData({ ...formData, message: e.target.value })
+                        }
                       />
                     </div>
 
@@ -232,15 +270,16 @@ export default function ContactPage() {
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                Visit Our Office
+                Let's Meet
               </h2>
               <p className="text-lg text-muted-foreground">
-                Stop by our office for a consultation or to discuss your real estate needs in person.
+                We'd love to meet with you in person! Call or email to schedule
+                a consultation at our office or a location convenient for you.
               </p>
             </div>
             <div className="relative rounded-lg h-96 overflow-hidden shadow-xl">
               <Image
-                src="/images/kristina-eck-team-logo.svg"
+                src="/images/Conference Room Photos (2).png"
                 alt="Our office location"
                 fill
                 className="object-cover rounded-lg"
