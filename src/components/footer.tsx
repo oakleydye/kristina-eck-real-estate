@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Facebook } from "lucide-react";
 
 export function Footer() {
   return (
@@ -142,6 +142,15 @@ export function Footer() {
           <div className="flex flex-col items-center gap-4">
             <div className="flex items-center gap-4">
               <a
+                href="https://www.facebook.com/kristinaeckrealestateteam/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-muted-foreground hover:text-primary transition-colors"
+                aria-label="Follow us on Facebook"
+              >
+                <Facebook className="h-5 w-5" />
+              </a>
+              <a
                 href="https://www.instagram.com/kristinaeckteam/"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -158,6 +167,17 @@ export function Footer() {
               </p>
               <p className="text-xs text-muted-foreground">
                 License #9471894-AB00 | Licensed in Utah & Idaho
+              </p>
+              <p className="text-xs text-muted-foreground">
+                Powered by{" "}
+                <a
+                  href="https://oakleydye.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline"
+                >
+                  Oakley Dye Software & Design
+                </a>
               </p>
             </div>
           </div>

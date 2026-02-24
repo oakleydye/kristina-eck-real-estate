@@ -13,7 +13,7 @@ export const siteConfig = {
   ogImage: "/images/_MG_4454Edit.webp",
   links: {
     instagram: "https://www.instagram.com/kristinaeckteam/",
-    facebook: "", // Add if available
+    facebook: "https://www.facebook.com/kristinaeckrealestateteam",
     twitter: "", // Add if available
     linkedin: "", // Add if available
   },
@@ -142,7 +142,7 @@ export function generateLocalBusinessSchema() {
       "@type": "City",
       name: siteConfig.contact.address.city,
     },
-    sameAs: [siteConfig.links.instagram].filter(Boolean),
+    sameAs: [siteConfig.links.instagram, siteConfig.links.facebook].filter(Boolean),
     openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
@@ -180,7 +180,7 @@ export function generateOrganizationSchema() {
       postalCode: siteConfig.contact.address.zip,
       addressCountry: siteConfig.contact.address.country,
     },
-    sameAs: [siteConfig.links.instagram].filter(Boolean),
+    sameAs: [siteConfig.links.instagram, siteConfig.links.facebook].filter(Boolean),
   };
 }
 

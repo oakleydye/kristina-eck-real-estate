@@ -25,13 +25,27 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+  const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission - this would connect to your backend/API
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setStatus("submitting");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormData({ name: "", email: "", phone: "", message: "" });
+        setStatus("success");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -117,7 +131,7 @@ export default function ContactPage() {
                         </a>
                       </CardDescription>
                       <CardDescription className="text-sm mt-1">
-                        We'll respond within 24 hours
+                        We don't let emails marinate!
                       </CardDescription>
                     </div>
                   </div>
@@ -158,7 +172,7 @@ export default function ContactPage() {
                       <CardDescription className="text-base">
                         Monday - Saturday: Open - contact us anytime
                         <br />
-                        Sunday: Closed
+                        Sunday: Closed - rested agents negotiate better deals!
                       </CardDescription>
                     </div>
                   </div>
@@ -252,9 +266,24 @@ export default function ContactPage() {
                       />
                     </div>
 
-                    <Button type="submit" className="w-full" size="lg">
+                    {status === "success" && (
+                      <p className="text-sm text-green-600 font-medium text-center">
+                        Thank you! We'll get back to you within 24 hours.
+                      </p>
+                    )}
+                    {status === "error" && (
+                      <p className="text-sm text-red-600 font-medium text-center">
+                        Something went wrong. Please try again or reach out directly.
+                      </p>
+                    )}
+                    <Button
+                      type="submit"
+                      className="w-full"
+                      size="lg"
+                      disabled={status === "submitting"}
+                    >
                       <Send className="mr-2 h-4 w-4" />
-                      Send Message
+                      {status === "submitting" ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
                 </CardContent>

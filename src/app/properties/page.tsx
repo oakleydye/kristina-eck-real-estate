@@ -55,7 +55,7 @@ export default function PropertiesPage() {
                     backgroundColor: 'transparent',
                   }}
                 />
-                <p className="text-xs text-muted-foreground mt-4">
+                {/* <p className="text-xs text-muted-foreground mt-4">
                   <strong>Want to customize the look?</strong> Visit{' '}
                   <a
                     href="https://middleware.idxbroker.com/mgmt/design/sitestyles"
@@ -66,7 +66,7 @@ export default function PropertiesPage() {
                     IDX Dashboard → Design → Site Styles
                   </a>
                   {' '}to match colors and fonts to your site theme.
-                </p>
+                </p> */}
               </CardContent>
             </Card>
           </div>

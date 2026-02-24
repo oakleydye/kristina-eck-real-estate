@@ -43,53 +43,39 @@ export function Header() {
           <NavigationMenu className="hidden md:flex">
             <NavigationMenuList className="flex gap-6">
               <NavigationMenuItem>
-                <Link href="/" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    Home
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/">Home</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/about" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    About Us
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/about">About Us</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/properties" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    Properties
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/properties">Properties</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/faq" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    FAQ
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/faq">FAQ</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/blog" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    Blog
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/blog">Blog</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/reviews" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    Reviews
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/reviews">Reviews</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/contact" passHref>
-                  <NavigationMenuLink className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
-                    Contact
-                  </NavigationMenuLink>
-                </Link>
+                <NavigationMenuLink asChild className="text-sm font-medium text-foreground/80 transition-colors hover:text-foreground">
+                  <Link href="/contact">Contact</Link>
+                </NavigationMenuLink>
               </NavigationMenuItem>
             </NavigationMenuList>
           </NavigationMenu>
