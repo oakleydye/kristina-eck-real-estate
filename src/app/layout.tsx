@@ -4,6 +4,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { defaultMetadata, generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/seo";
+import { Analytics } from "@vercel/analytics/next";
 
 // Elegant serif for headings
 const playfair = Playfair_Display({
@@ -47,6 +48,7 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${lora.variable} antialiased flex flex-col min-h-screen`}
       >
+        <Analytics />
         <Header />
         <main className="flex-1">
           {children}
