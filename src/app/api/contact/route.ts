@@ -126,15 +126,60 @@ function createEmailHTML(
 </html>`;
 }
 
+const SPAM_KEYWORDS = [
+  "casino", "viagra", "cialis", "crypto", "bitcoin", "nft", "seo service",
+  "buy followers", "make money fast", "work from home", "click here", "limited offer",
+];
+
+function isSpam(name: string, email: string, message: string): boolean {
+  const combined = `${name} ${email} ${message}`.toLowerCase();
+
+  // Too many URLs
+  const urlCount = (combined.match(/https?:\/\//gi) ?? []).length;
+  if (urlCount > 2) return true;
+
+  // Spam keyword match
+  if (SPAM_KEYWORDS.some((kw) => combined.includes(kw))) return true;
+
+  // Excessive repetition (same char repeated 10+ times)
+  if (/(.)\1{9,}/.test(message)) return true;
+
+  return false;
+}
+
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, message } = await request.json();
+    const { name, email, phone, message, _hp, _t } = await request.json();
+
+    // Honeypot check — bots fill hidden fields, humans don't
+    if (_hp) {
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
+
+    // Timing check — reject submissions under 3 seconds (bots are fast)
+    const elapsed = typeof _t === "number" ? Date.now() - _t : Infinity;
+    if (elapsed < 3000) {
+      return NextResponse.json({ success: true }, { status: 200 });
+    }
 
     if (!name || !email || !message) {
       return NextResponse.json(
         { error: "Name, email, and message are required" },
         { status: 400 }
       );
+    }
+
+    // Field length limits
+    if (name.length > 200 || email.length > 200 || message.length > 5000) {
+      return NextResponse.json(
+        { error: "One or more fields exceed the maximum length." },
+        { status: 400 }
+      );
+    }
+
+    // Content-based spam detection
+    if (isSpam(name, email, message)) {
+      return NextResponse.json({ success: true }, { status: 200 });
     }
 
     const html = createEmailHTML(name, email, phone, message);

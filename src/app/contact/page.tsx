@@ -25,6 +25,8 @@ export default function ContactPage() {
     phone: "",
     message: "",
   });
+  const [honeypot, setHoneypot] = useState("");
+  const [formLoadTime] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -34,7 +36,7 @@ export default function ContactPage() {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, _hp: honeypot, _t: formLoadTime }),
       });
 
       if (response.ok) {
@@ -192,6 +194,19 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <form onSubmit={handleSubmit} className="space-y-6">
+                    {/* Honeypot field — hidden from real users, bots fill it in */}
+                    <div style={{ position: "absolute", left: "-9999px", top: "-9999px", opacity: 0 }} aria-hidden="true">
+                      <label htmlFor="website">Website</label>
+                      <input
+                        id="website"
+                        name="website"
+                        type="text"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        value={honeypot}
+                        onChange={(e) => setHoneypot(e.target.value)}
+                      />
+                    </div>
                     <div className="space-y-2">
                       <label
                         htmlFor="name"
