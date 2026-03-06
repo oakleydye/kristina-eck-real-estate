@@ -1,0 +1,23 @@
+# Kristina Eck Real Estate Team
+
+> Expert real estate services for buyers and sellers in Cache Valley and Bear Lake, Utah/Idaho. Led by Kristina Eck — licensed broker with 23+ years of experience, 500+ homes sold, GRI designee, licensed in Utah and Idaho. Affiliated with Keller Williams Realty. Office: 33 North Main, Logan, UT 84321. Phone: (435) 757-7259.
+
+## Pages
+
+- [Home](https://kristinaeck.com/): Overview of services, client testimonials, and quick access to property search. Serving Logan, North Logan, Hyde Park, Providence, Smithfield, Millville, Nibley, Wellsville, Hyrum, Richmond, Cache Valley, and Bear Lake.
+- [About](https://kristinaeck.com/about): Bio and credentials for Kristina Eck — lead broker with 23+ years of Cache Valley real estate experience. Specialties include residential sales, new construction, first-time buyers, and investment properties. Powered by Keller Williams Realty.
+- [Properties](https://kristinaeck.com/properties): Live MLS property listings for homes for sale in Cache Valley and Bear Lake via IDX Broker integration.
+- [Blog](https://kristinaeck.com/blog): Local real estate market updates, seasonal home tips, and Cache Valley community news.
+- [Reviews](https://kristinaeck.com/reviews): Client testimonials and reviews from families served throughout Cache Valley and Northern Utah.
+- [FAQ](https://kristinaeck.com/faq): Answers to common questions about buying and selling homes in Cache Valley — covering financing, inspections, pricing, and closing.
+- [Contact](https://kristinaeck.com/contact): Contact form and business information. Schedule a free consultation. Phone: (435) 757-7259. Email: kristinaeck10@gmail.com.
+
+## Blog Posts
+
+- [November 2025 in Cache Valley](https://kristinaeck.com/blog/novermber-2025-in-cache-valley-local-events-home-tips-logan-utah-highlights): Local events, winter home tips, and Logan Utah real estate highlights for November 2025.
+- [October in Cache Valley](https://kristinaeck.com/blog/october-in-cache-valley-pumpkins-treats-market-trends-local-flavor): Fall real estate market trends, pumpkin patches, and local events in Cache Valley for October 2025.
+- [September in Cache Valley](https://kristinaeck.com/blog/september-in-cache-valley-homes-harvests-happenings): Harvest season happenings, home selling tips, and Cache Valley real estate market update for September 2025.
+
+## Optional
+
+- [Sitemap](https://kristinaeck.com/sitemap.xml): Full XML sitemap of all indexed pages.
