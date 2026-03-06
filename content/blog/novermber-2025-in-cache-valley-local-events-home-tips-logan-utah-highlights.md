@@ -5,7 +5,7 @@ excerpt: "November in Cache Valley has arrived bringing crisp mornings, golden l
 author: Daina Rudd
 category: "Local Updates"
 image: "/images/blog/2025november.webp"
-tags: ["Activities", "Cache Valley"]
+tags: ["Activities", "Cache Valley", "Logan Utah", "Market Update", "Winter Home Tips"]
 ---
 
 November in Cache Valley has arrived bringing crisp mornings, golden leaves, and that awkward “do I need a jacket or not?” kind of weather. It’s also full of reasons to celebrate our amazing community! If you’re looking for fun things to do around Cache Valley this month, we’ve rounded up local events, homeowner tips, dining favorites, and (of course) a quick real estate market update.  

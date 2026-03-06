@@ -5,7 +5,7 @@ excerpt: "September in Cache Valley is like that friend who shows up with homema
 author: Daina Rudd
 category: "Local Updates"
 image: "/images/blog/2025september.webp"
-tags: ["Activities", "Cache Valley"]
+tags: ["Activities", "Cache Valley", "Logan Utah Events", "Fall Real Estate", "Home Selling Tips"]
 ---
 
 September in Cache Valley is like that friend who shows up with homemade pumpkin bread and a big smile; you didn’t realize how much you needed it until it arrived. The mornings are crisp, the afternoons are golden, and the air smells faintly of apples, hay, and the occasional Aggie tailgate grill. It’s the season where your porch begs for pumpkins, your crockpot earns its keep, and, believe it or not, the real estate market is buzzing right alongside the bees finishing up their summer hustle.  

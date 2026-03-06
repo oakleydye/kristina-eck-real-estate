@@ -8,12 +8,12 @@ import { getAllPosts, formatDate } from "@/lib/blog";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Real Estate Blog | Tips, Guides & Market Updates",
-  description: "Expert insights on home buying, selling, market trends, and real estate tips from Kristina Eck Real Estate Team. Stay informed with our latest articles and guides.",
-  keywords: ["real estate blog", "home buying tips", "real estate market", "property investment", "home selling guide"],
+  title: "Cache Valley Real Estate Blog | Market Updates",
+  description: "Cache Valley real estate tips, Logan UT market updates & local events from Kristina Eck Team. Expert insights for buyers and sellers.",
+  keywords: ["Cache Valley real estate blog", "Logan Utah housing market", "Cache Valley market update", "home buying tips Logan UT", "Cache Valley events"],
   openGraph: {
-    title: "Real Estate Blog | Expert Tips and Market Insights",
-    description: "Expert insights on home buying, selling, market trends, and real estate tips. Stay informed with our latest articles.",
+    title: "Cache Valley Real Estate Blog | Market Updates",
+    description: "Cache Valley real estate tips, Logan UT market updates & local events from Kristina Eck Team.",
   },
 };
 

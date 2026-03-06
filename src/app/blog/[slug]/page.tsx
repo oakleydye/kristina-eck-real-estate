@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       name: 'Kristina Eck Real Estate Team',
       logo: {
         '@type': 'ImageObject',
-        url: 'https://kristinaeck.com/logo.png',
+        url: 'https://kristinaeckteam.com/logo.png',
       },
     },
   };

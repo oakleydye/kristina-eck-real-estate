@@ -118,7 +118,7 @@ function createEmailHTML(
       <div class="field-value">${message}</div>
     </div>
     <div class="footer">
-      <p>Submitted via kristinaeckrealestate.com contact form</p>
+      <p>Submitted via kristinaeckteam.com contact form</p>
       <p>Received on ${timestamp}</p>
     </div>
   </div>

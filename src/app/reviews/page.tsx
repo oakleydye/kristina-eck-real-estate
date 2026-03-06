@@ -5,12 +5,12 @@ import { Star, MapPin, Home } from "lucide-react";
 import { getAllReviews, getAverageRating, getTotalReviewCount, formatReviewDate } from "@/lib/reviews";
 
 export const metadata: Metadata = {
-  title: "Client Reviews & Testimonials | Kristina Eck Real Estate",
-  description: "Read what our clients say about working with Kristina Eck Real Estate Team. Real reviews from satisfied homebuyers and sellers in Cache Valley.",
-  keywords: ["client reviews", "testimonials", "real estate reviews", "Logan Utah realtor reviews", "Cache Valley real estate testimonials"],
+  title: "Reviews | Kristina Eck Real Estate Cache Valley",
+  description: "Read reviews from Cache Valley home buyers and sellers. See why families trust Kristina Eck Team for real estate in Logan, UT and Bear Lake.",
+  keywords: ["Kristina Eck reviews", "Logan Utah realtor reviews", "Cache Valley real estate testimonials", "best realtor Cache Valley"],
   openGraph: {
-    title: "Client Reviews - Kristina Eck Real Estate Team",
-    description: "See why clients trust Kristina Eck for their real estate needs in Cache Valley. Read authentic reviews from satisfied buyers and sellers.",
+    title: "Client Reviews | Kristina Eck Real Estate",
+    description: "Read reviews from Cache Valley home buyers and sellers. See why families trust Kristina Eck Team.",
   },
 };
 

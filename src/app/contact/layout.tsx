@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Contact Us | Get in Touch",
-  description: "Contact Kristina Eck Real Estate Team. Call us at (435) 757-7259, email kristina@kwlogan.com, or visit our office at 33 North Main, Logan, UT. We're here to help with all your real estate needs.",
-  keywords: ["contact real estate agent", "real estate consultation", "schedule showing", "contact realtor", "Logan Utah realtor"],
+  title: "Contact Us | Kristina Eck Real Estate Logan UT",
+  description: "Contact Kristina Eck Real Estate Team in Logan, UT. Call (435) 757-7259 or visit 33 North Main. Free consultations for Cache Valley buyers & sellers.",
+  keywords: ["contact realtor Logan Utah", "Cache Valley real estate agent", "schedule showing Logan UT", "real estate consultation Cache Valley"],
   openGraph: {
     title: "Contact Kristina Eck Real Estate Team",
-    description: "Get in touch with our team. Call (435) 757-7259 or visit us at 33 North Main, Logan, UT 84321. Monday-Friday 9AM-6PM.",
+    description: "Contact us in Logan, UT. Call (435) 757-7259 or visit 33 North Main. Free consultations for Cache Valley buyers & sellers.",
     images: ["/images/_MG_4395EditF.webp"],
   },
 };

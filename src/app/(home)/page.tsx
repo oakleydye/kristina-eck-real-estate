@@ -9,11 +9,12 @@ import { getFeaturedReviews } from "@/lib/reviews";
 import { ReviewsCarousel } from "@/components/reviews-carousel";
 
 export const metadata: Metadata = {
-  title: "The Right Agent Makes A Big Difference | Kristina Eck Real Estate Team",
-  description: "We've GOT you covered! Expert real estate services with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.",
+  title: "Cache Valley Homes for Sale | Kristina Eck Team",
+  description: "Find homes in Logan, Cache Valley & Bear Lake with 23+ years of local expertise. Licensed in Utah and Idaho. Call (435) 757-7259.",
+  keywords: ["Cache Valley homes for sale", "Logan Utah real estate", "Bear Lake homes", "Cache Valley realtor", "Kristina Eck Real Estate"],
   openGraph: {
-    title: "The Right Agent Makes A Big Difference | Kristina Eck Real Estate Team",
-    description: "We've GOT you covered! Over 23 years of experience serving Cache Valley and Bear Lake. Licensed in Utah and Idaho.",
+    title: "Cache Valley Homes for Sale | Kristina Eck Team",
+    description: "Find homes in Logan, Cache Valley & Bear Lake with 23+ years of local expertise. Licensed in Utah and Idaho.",
     images: ["/images/_MG_4454Edit.webp"],
   },
 };

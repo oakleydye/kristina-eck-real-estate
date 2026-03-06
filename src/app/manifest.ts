@@ -4,7 +4,7 @@ export default function manifest(): MetadataRoute.Manifest {
   return {
     name: 'Kristina Eck Real Estate Team',
     short_name: 'Kristina Eck RE',
-    description: 'Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers.',
+    description: 'Cache Valley and Bear Lake real estate. 23+ years of experience serving Logan, UT and surrounding areas.',
     start_url: '/',
     display: 'standalone',
     background_color: '#fef9f5',

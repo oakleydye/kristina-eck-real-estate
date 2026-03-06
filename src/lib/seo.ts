@@ -9,7 +9,7 @@ export const siteConfig = {
   name: "Kristina Eck Real Estate Team",
   description:
     "Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.",
-  url: "https://kristinaeck.com", // Update with your actual domain
+  url: "https://kristinaeckteam.com",
   ogImage: "/images/_MG_4454Edit.webp",
   links: {
     instagram: "https://www.instagram.com/kristinaeckteam/",
@@ -41,25 +41,28 @@ export const siteConfig = {
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Find Your Dream Home`,
+    default: "Kristina Eck Real Estate | Cache Valley UT",
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   keywords: [
-    "real estate",
-    "homes for sale",
-    "property listings",
-    "real estate agent",
-    "buy home",
-    "sell home",
-    "residential real estate",
+    "Cache Valley real estate",
+    "Logan Utah homes for sale",
+    "Bear Lake real estate",
+    "Logan UT realtor",
+    "Cache Valley homes",
+    "Hyde Park homes",
+    "Providence Utah real estate",
+    "North Logan homes",
+    "Smithfield Utah homes for sale",
+    "Hyrum Utah real estate",
     "Kristina Eck",
-    "real estate team",
-    "MLS listings",
-    "home buying",
-    "home selling",
-    "property search",
-    "real estate services",
+    "Kristina Eck Real Estate Team",
+    "Cache Valley realtor",
+    "Logan Utah real estate agent",
+    "homes for sale Logan UT",
+    "buy home Cache Valley",
+    "sell home Logan Utah",
   ],
   authors: [{ name: "Kristina Eck Real Estate Team" }],
   creator: "Kristina Eck Real Estate Team",
@@ -103,10 +106,7 @@ export const defaultMetadata: Metadata = {
     },
   },
   verification: {
-    // Add these when you get them
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    // bing: 'your-bing-verification-code',
+    // google: '', // Add Google Search Console verification code when available
   },
 };
 
@@ -135,13 +135,23 @@ export function generateLocalBusinessSchema() {
     },
     geo: {
       "@type": "GeoCoordinates",
-      latitude: "40.7128", // Update with actual coordinates
-      longitude: "-74.0060",
+      latitude: "41.7370",
+      longitude: "-111.8338",
     },
-    areaServed: {
-      "@type": "City",
-      name: siteConfig.contact.address.city,
-    },
+    areaServed: [
+      { "@type": "City", name: "Logan", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "North Logan", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Hyde Park", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Providence", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Smithfield", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Millville", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Nibley", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Wellsville", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Hyrum", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "City", name: "Richmond", containedInPlace: { "@type": "State", name: "Utah" } },
+      { "@type": "AdministrativeArea", name: "Cache Valley" },
+      { "@type": "AdministrativeArea", name: "Bear Lake" },
+    ],
     sameAs: [siteConfig.links.instagram, siteConfig.links.facebook].filter(Boolean),
     openingHoursSpecification: [
       {

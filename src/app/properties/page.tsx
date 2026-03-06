@@ -3,12 +3,12 @@ import { Badge } from "@/components/ui/badge";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Available Properties | Browse Homes for Sale",
-  description: "Search and browse available properties with Kristina Eck Real Estate Team. View MLS listings, featured homes, condos, and estates. Find your perfect property today.",
-  keywords: ["homes for sale", "property listings", "MLS", "real estate listings", "houses for sale", "condos for sale"],
+  title: "Homes for Sale in Cache Valley & Bear Lake | MLS",
+  description: "Browse MLS listings in Logan, North Logan, Smithfield, Hyrum, Providence & Bear Lake. Updated daily. Search Cache Valley homes with Kristina Eck Team.",
+  keywords: ["homes for sale Cache Valley", "Logan Utah MLS listings", "Bear Lake homes for sale", "North Logan homes", "Smithfield UT real estate", "Cache Valley property search"],
   openGraph: {
-    title: "Browse Available Properties for Sale",
-    description: "Search and browse available properties. View MLS listings and featured homes with Kristina Eck Real Estate Team.",
+    title: "Homes for Sale in Cache Valley & Bear Lake",
+    description: "Browse MLS listings in Cache Valley and Bear Lake. Updated daily. Search with Kristina Eck Real Estate Team.",
   },
 };
 

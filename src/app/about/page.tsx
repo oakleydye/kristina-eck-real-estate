@@ -14,22 +14,21 @@ import { Metadata } from "next";
 import { generatePersonSchema, siteConfig } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "About Kristina Eck | Experienced Real Estate Broker",
+  title: "About Kristina Eck | Logan UT Real Estate Broker",
   description:
-    "Meet Kristina Eck, a licensed real estate broker with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake. 500+ homes sold, 98% satisfaction rate.",
+    "Kristina Eck: 23+ years as a Cache Valley real estate broker. 500+ homes sold in Logan, North Logan, Smithfield & Bear Lake. Licensed in UT & ID.",
   keywords: [
-    "Kristina Eck",
-    "real estate broker",
-    "experienced realtor",
-    "local real estate expert",
-    "top real estate agent",
+    "Kristina Eck realtor",
+    "Logan Utah real estate broker",
+    "Cache Valley real estate agent",
     "Bear Lake realtor",
-    "Cache Valley real estate",
+    "top realtor Logan UT",
+    "Keller Williams Logan Utah",
   ],
   openGraph: {
-    title: "About Kristina Eck - Licensed Real Estate Broker",
+    title: "About Kristina Eck | Logan UT Real Estate Broker",
     description:
-      "Meet Kristina Eck, an experienced real estate broker. 23+ years of experience, licensed in Utah and Idaho. Specializing in Cache Valley and Bear Lake.",
+      "23+ years of Cache Valley real estate expertise. 500+ homes sold in Logan, North Logan, Smithfield & Bear Lake. Licensed in Utah and Idaho.",
     images: ["/images/_MG_4255EditF.webp"],
   },
 };

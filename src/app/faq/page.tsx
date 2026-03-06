@@ -5,14 +5,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Phone, Mail } from "lucide-react";
 import Link from "next/link";
+import { generateBreadcrumbSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: "Frequently Asked Questions | Real Estate FAQ",
-  description: "Find answers to common questions about buying, selling, and working with Kristina Eck Real Estate Team. Get expert insights on the Cache Valley real estate market.",
-  keywords: ["real estate FAQ", "home buying questions", "selling home questions", "Logan Utah real estate", "Cache Valley housing"],
+  title: "Real Estate FAQ | Cache Valley Home Buying & Selling",
+  description: "Answers to common Cache Valley real estate questions: buying, selling, financing & inspections. Expert advice from Kristina Eck Team in Logan, UT.",
+  keywords: ["Cache Valley real estate FAQ", "buying a home Logan Utah", "selling home Cache Valley", "Logan UT housing market questions"],
   openGraph: {
-    title: "FAQ - Kristina Eck Real Estate Team",
-    description: "Get answers to your real estate questions from experienced professionals in Cache Valley.",
+    title: "Real Estate FAQ | Cache Valley Home Buying & Selling",
+    description: "Answers to common Cache Valley real estate questions from Kristina Eck Team in Logan, UT.",
   },
 };
 
@@ -182,7 +183,37 @@ export default function FAQPage() {
     }
   ];
 
+  // Generate FAQPage structured data
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqCategories.flatMap((category) =>
+      category.questions.map((item) => ({
+        "@type": "Question",
+        name: item.q,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: item.a,
+        },
+      }))
+    ),
+  };
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: "Home", url: "/" },
+    { name: "FAQ", url: "/faq" },
+  ]);
+
   return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
     <div className="flex flex-col">
       {/* Header Section */}
       <section className="py-16 bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10">
@@ -259,5 +290,6 @@ export default function FAQPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
