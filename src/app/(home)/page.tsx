@@ -78,8 +78,8 @@ export default function HomePage() {
             {/* Right Column - Image */}
             <div className="relative h-[500px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/Better Pic.png"
-                alt="Happy family with their real estate agent"
+                src="/images/EckTeam-11.jpg"
+                alt="The Kristina Eck Real Estate Team"
                 fill
                 className="object-cover"
                 priority

@@ -324,7 +324,7 @@ export default function ContactPage() {
             <div className="relative rounded-lg h-96 overflow-hidden shadow-xl">
               <Image
                 src="/images/Conference Room Photos (2).png"
-                alt="Our office location"
+                alt="Kristina Eck Team office waiting room"
                 fill
                 className="object-cover rounded-lg"
                 sizes="(max-width: 1200px) 100vw, 1200px"

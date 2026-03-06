@@ -107,7 +107,7 @@ export default function AboutPage() {
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <Image
                   src="/images/_MG_4544.jpg"
-                  alt="Beautiful home"
+                  alt="Realtors collaborating on a project"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -163,7 +163,7 @@ export default function AboutPage() {
               <div className="md:col-span-2">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl ring-8 ring-primary/10">
                   <Image
-                    src="/images/Kristina-15.jpg"
+                    src="/images/Better Pic.png"
                     alt="Kristina Eck"
                     fill
                     className="object-cover"
