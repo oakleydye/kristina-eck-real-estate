@@ -106,7 +106,7 @@ export const defaultMetadata: Metadata = {
     },
   },
   verification: {
-    // google: '', // Add Google Search Console verification code when available
+    google: process.env.GOOGLE_SEARCH_VERIFICATION_CODE, 
   },
 };
 
