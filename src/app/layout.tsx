@@ -5,6 +5,7 @@ import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { defaultMetadata, generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
+import Script from "next/script";
 
 // Elegant serif for headings
 const playfair = Playfair_Display({
@@ -35,6 +36,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-59L53VL8VH" strategy="afterInteractive" />
+        <Script id="google-analytics-config" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-59L53VL8VH');
+          `
+        }} />
         {/* Structured Data */}
         <script
           type="application/ld+json"
