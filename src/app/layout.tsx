@@ -36,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Tag manager setup */}
         <Script strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -46,6 +47,8 @@ export default function RootLayout({
             `
         }}>
         </Script>
+
+        {/* Analytics tag */}
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-59L53VL8VH" strategy="afterInteractive" />
         <Script id="google-analytics-config" strategy="afterInteractive" dangerouslySetInnerHTML={{
           __html: `
@@ -54,6 +57,18 @@ export default function RootLayout({
             gtag('js', new Date());
           
             gtag('config', 'G-59L53VL8VH');
+          `
+        }} />
+
+        {/* Ads tag */}
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-CVYVLGCEXX" strategy="afterInteractive" />
+        <Script id="google-analytics-config" strategy="afterInteractive" dangerouslySetInnerHTML={{
+          __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+          
+            gtag('config', 'G-CVYVLGCEXX');
           `
         }} />
         {/* Structured Data */}
