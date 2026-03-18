@@ -136,3 +136,7 @@
     font-weight: 400;
   }
 }
+
+.grecaptcha-badge {
+  visibility: hidden;
+}

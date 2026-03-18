@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer";
 import { defaultMetadata, generateLocalBusinessSchema, generateOrganizationSchema } from "@/lib/seo";
 import { Analytics } from "@vercel/analytics/next";
 import Script from "next/script";
+import RecaptchaProvider from "./recaptcha_provider";
 
 // Elegant serif for headings
 const playfair = Playfair_Display({
@@ -85,11 +86,13 @@ export default function RootLayout({
         className={`${playfair.variable} ${lora.variable} antialiased flex flex-col min-h-screen`}
       >
         <Analytics />
-        <Header />
-        <main className="flex-1">
-          {children}
-        </main>
-        <Footer />
+        <RecaptchaProvider>
+          <Header />
+          <main className="flex-1">
+            {children}
+          </main>
+          <Footer />
+        </RecaptchaProvider>
       </body>
     </html>
   );

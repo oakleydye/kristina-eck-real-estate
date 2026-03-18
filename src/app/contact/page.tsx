@@ -14,6 +14,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, Send } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 // Note: Metadata must be in a separate server component file for client components
 // Created in src/app/contact/layout.tsx
@@ -28,15 +30,35 @@ export default function ContactPage() {
   const [honeypot, setHoneypot] = useState("");
   const [formLoadTime] = useState(() => Date.now());
   const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setStatus("submitting");
+
+    if (!executeRecaptcha) {
+      setStatus("error");
+      return;
+    }
+
+    let token:string;
+    try {
+      token = await executeRecaptcha('form_submit');
+    } catch (error) {
+      setStatus("error");
+      return;
+    }
+
+    if (token.trim() === "") {
+      setStatus("error");
+      return;
+    }
+    
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, _hp: honeypot, _t: formLoadTime }),
+        body: JSON.stringify({ ...formData, _hp: honeypot, _t: formLoadTime, token }),
       });
 
       if (response.ok) {
@@ -301,6 +323,11 @@ export default function ContactPage() {
                       {status === "submitting" ? "Sending..." : "Send Message"}
                     </Button>
                   </form>
+                  <div className="text-xs ml-4 mt-2 text-muted-foreground italic">
+                    * This site is protected by reCAPTCHA and the Google&nbsp;
+                    <Link href="https://policies.google.com/privacy">Privacy Policy</Link> and&nbsp;
+                    <Link href="https://policies.google.com/terms">Terms of Service</Link> apply.
+                  </div>
                 </CardContent>
               </Card>
             </div>
