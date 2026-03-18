@@ -149,7 +149,7 @@ function isSpam(name: string, email: string, message: string): boolean {
 
 export async function POST(request: NextRequest) {
   try {
-    const { name, email, phone, message, _hp, _t } = await request.json();
+    const { name, email, phone, message, _hp, _t, token } = await request.json();
 
     // Honeypot check — bots fill hidden fields, humans don't
     if (_hp) {
@@ -200,6 +200,7 @@ export async function POST(request: NextRequest) {
       subject: `New Contact Inquiry from ${name}`,
       html,
       text,
+      token
     });
 
     if (!response.ok) {
