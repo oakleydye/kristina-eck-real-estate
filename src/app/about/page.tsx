@@ -12,6 +12,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Metadata } from "next";
 import { generatePersonSchema, siteConfig } from "@/lib/seo";
+import { getAllAgents } from "@/lib/agents";
+import { AgentBioCard } from "@/components/agent-bio-card";
 
 export const metadata: Metadata = {
   title: "About Kristina Eck | Logan UT Real Estate Broker",
@@ -33,7 +35,8 @@ export const metadata: Metadata = {
   },
 };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const agents = getAllAgents();
   const values = [
     {
       icon: Heart,
@@ -251,6 +254,33 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      {/* Team Members Section */}
+      {agents.length > 0 && (
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center max-w-3xl mx-auto mb-16">
+                <Badge variant="secondary" className="mb-4">
+                  Our Team
+                </Badge>
+                <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+                  Meet the Team
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Dedicated professionals committed to finding you the perfect home.
+                </p>
+              </div>
+
+              <div className="space-y-20">
+                {agents.map((agent) => (
+                  <AgentBioCard key={agent.slug} agent={agent} />
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Keller Williams Section */}
       <section className="py-20 bg-muted/30">
