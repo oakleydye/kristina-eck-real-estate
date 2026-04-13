@@ -1,5 +1,5 @@
 ---
-name: "Abby"
+name: "Abby Fleenor"
 title: "Real Estate Agent"
 photo: "/images/agents/abby.png"
 order: 2
