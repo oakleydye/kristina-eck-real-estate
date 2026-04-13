@@ -31,7 +31,6 @@ export function AgentBioCard({ agent }: AgentBioCardProps) {
           <h3 className="text-4xl md:text-5xl font-bold text-foreground mb-2">
             {agent.name}
           </h3>
-          <p className="text-xl text-primary font-medium">Real Estate Agent</p>
         </div>
 
         <div className="space-y-4 text-muted-foreground">
