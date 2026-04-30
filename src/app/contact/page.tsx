@@ -350,7 +350,7 @@ export default function ContactPage() {
             </div>
             <div className="relative rounded-lg h-96 overflow-hidden shadow-xl">
               <Image
-                src="/images/Conference Room Photos (2).png"
+                src="/images/office.webp"
                 alt="Kristina Eck Team office waiting room"
                 fill
                 className="object-cover rounded-lg"

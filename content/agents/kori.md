@@ -1,8 +1,8 @@
 ---
 name: "Kori Palmer"
 title: "Assistant & Transaction Coordinator"
-photo: "/images/agents/kori.jpg"
-order: 3
+photo: "/images/agents/kori.webp"
+order: 2
 ---
 
 Kori brings organization, creativity, and thoughtful attention to detail to the Kristina Eck Team. As the team’s assistant and transaction coordinator, she helps ensure every step of the buying and selling process runs smoothly behind the scenes. From managing contracts and deadlines to supporting marketing and client communication, Kori plays an important role in creating a seamless experience for both clients and the team.

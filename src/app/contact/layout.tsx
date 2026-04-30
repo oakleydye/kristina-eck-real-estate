@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Contact Kristina Eck Real Estate Team",
     description: "Contact us in Logan, UT. Call (435) 757-7259 or visit 33 North Main. Free consultations for Cache Valley buyers & sellers.",
-    images: ["/images/_MG_4395EditF.webp"],
+    images: ["/images/hero.webp"],
   },
 };
 

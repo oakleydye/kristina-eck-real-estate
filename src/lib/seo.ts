@@ -10,7 +10,7 @@ export const siteConfig = {
   description:
     "Your trusted partner in finding the perfect home. Expert real estate services for buyers and sellers with over 23 years of experience. Licensed in Utah and Idaho, specializing in Cache Valley and Bear Lake.",
   url: "https://kristinaeckteam.com",
-  ogImage: "/images/_MG_4454Edit.webp",
+  ogImage: "/images/hero.webp",
   links: {
     instagram: "https://www.instagram.com/kristinaeckteam/",
     facebook: "https://www.facebook.com/kristinaeckrealestateteam",

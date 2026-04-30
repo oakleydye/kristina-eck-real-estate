@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "About Kristina Eck | Logan UT Real Estate Broker",
     description:
       "23+ years of Cache Valley real estate expertise. 500+ homes sold in Logan, North Logan, Smithfield & Bear Lake. Licensed in Utah and Idaho.",
-    images: ["/images/_MG_4255EditF.webp"],
+    images: ["/images/hero.webp"],
   },
 };
 
@@ -109,7 +109,7 @@ export default async function AboutPage() {
               </div>
               <div className="relative h-96 rounded-lg overflow-hidden shadow-xl">
                 <Image
-                  src="/images/_MG_4544.jpg"
+                  src="/images/hero.webp"
                   alt="Realtors collaborating on a project"
                   fill
                   className="object-cover"
@@ -166,7 +166,7 @@ export default async function AboutPage() {
               <div className="md:col-span-2">
                 <div className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-2xl ring-8 ring-primary/10">
                   <Image
-                    src="/images/Better Pic.png"
+                    src="/images/agents/kristina.webp"
                     alt="Kristina Eck"
                     fill
                     className="object-cover"

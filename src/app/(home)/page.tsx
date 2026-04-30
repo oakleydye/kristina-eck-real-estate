@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cache Valley Homes for Sale | Kristina Eck Team",
     description: "Find homes in Logan, Cache Valley & Bear Lake with 23+ years of local expertise. Licensed in Utah and Idaho.",
-    images: ["/images/_MG_4454Edit.webp"],
+    images: ["/images/hero.webp"],
   },
 };
 
@@ -78,7 +78,7 @@ export default function HomePage() {
             {/* Right Column - Image */}
             <div className="relative h-[500px] lg:h-[700px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/EckTeam-11.jpg"
+                src="/images/hero.webp"
                 alt="The Kristina Eck Real Estate Team"
                 fill
                 className="object-cover"

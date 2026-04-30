@@ -1,8 +1,8 @@
 ---
 name: "Abby Fleenor"
 title: "Real Estate Agent"
-photo: "/images/agents/abby.png"
-order: 2
+photo: "/images/agents/abby.webp"
+order: 1
 ---
 
 Abby brings a thoughtful approach to every client’s home search, helping people find spaces that feel personal, welcoming, and reflective of their lifestyle. With a natural eye for design, she enjoys helping clients envision spaces that are both functional and beautiful.
