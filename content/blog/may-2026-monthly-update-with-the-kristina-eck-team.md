@@ -1,5 +1,5 @@
 ---
-title: "May 2026"
+title: "May 2026: Your monthly update with The Kristina Eck Team"
 date: "2026-05-11"
 excerpt: "The real estate market continues to shift as we move through spring, and one of the biggest factors right now is interest rates. While many expected rates to come down more quickly this year, they’ve remained a bit higher than anticipated— largely due to ongoing inflation pressures."
 author: "Kori Palmer"
