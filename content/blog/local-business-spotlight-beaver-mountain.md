@@ -1,5 +1,5 @@
 ---
-title: "Local Spotlight: Cache Valley Cruise-In"
+title: "Local Business Spotlight: Beaver Mountain Ski Area"
 date: "2026-06-09"
 excerpt: "Nestled in beautiful Logan Canyon, Beaver Mountain has been a beloved Cache Valley destination for generations. As the oldest family-owned ski resort in the United States, Beaver has built a reputation for incredible snow, friendly faces, and a welcoming atmosphere that keeps locals and visitors coming back year after year."
 author: "Abby Fleenor"
